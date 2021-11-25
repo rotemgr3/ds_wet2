@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <iostream>
 #include "BST.h"
+using namespace std;
 
 void preOrder(std::shared_ptr<Node<int, int>> root)
 {
@@ -25,17 +26,30 @@ int main()
     tree.Insert(30,3);
     tree.Insert(40,4);
     tree.Insert(50,5);
-    tree.Insert(60,6);
+    tree.Insert(25,6);
     /* The constructed AVL Tree would be
-                30
+            30
             / \
             20 40
             / \ \
-        10 25 50
+           10 25 50
     */
     std::cout << "Preorder traversal of the "
             "constructed AVL tree is \n";
-    preorder(tree.root);
+    preOrder(tree.root);
      
     return 0;
 }
+
+/* The constructed AVL Tree would be
+            20
+            / \
+           10 30         
+*/
+/* The constructed AVL Tree would be
+            10
+            / \
+              20
+                \
+                 30         
+*/
