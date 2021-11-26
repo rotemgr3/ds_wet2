@@ -2,7 +2,7 @@
 #define BST_H_
 
 #include <memory>
-#include <assert.h>
+#include "node.h"
 
 int max(int a, int b)
 {
@@ -10,39 +10,8 @@ int max(int a, int b)
 }
 
 template <class keyT, class dataT>
-class Node {
-    public:
-        keyT key;
-        std::shared_ptr<dataT> data;
-        std::shared_ptr<Node<keyT, dataT>> left;
-        std::shared_ptr<Node<keyT, dataT>> right; 
-        int height;
-        Node(const keyT& key, std::shared_ptr<dataT> data) : key(key), data(data), 
-            left(nullptr), right(nullptr), height(0) {}
-        ~Node() = default;
-        static int NodeGetBF(std::shared_ptr<Node<keyT, dataT>> node);
-        static int NodeGetHeight(std::shared_ptr<Node<keyT, dataT>> node);
-        
-};
-
-template <class keyT, class dataT>
-int Node<keyT, dataT>::NodeGetHeight(std::shared_ptr<Node<keyT, dataT>> node)
-{
-    if(node == nullptr)
-        return -1;
-    return node->height;
-}
-
-template <class keyT, class dataT>
-int Node<keyT, dataT>::NodeGetBF(std::shared_ptr<Node<keyT, dataT>> node)
-{
-    return Node<keyT, dataT>::NodeGetHeight(node->left) - Node<keyT, dataT>::NodeGetHeight(node->right);
-}
-
-template <class keyT, class dataT>
 class BST {
     private:
-        static void InOrderAux(BST<keyT, dataT> root, dataT* sorted_data,int n);
         static std::shared_ptr<Node<keyT, dataT>> InsertAux(std::shared_ptr<Node<keyT, dataT>> root, 
                                                             std::shared_ptr<Node<keyT, dataT>> toInsert); 
         static int GetBF(std::shared_ptr<Node<keyT, dataT>> node);
@@ -58,24 +27,19 @@ class BST {
 
     public:
         std::shared_ptr<Node<keyT, dataT>> root;
-        BST() : root(nullptr) {}
-        BST(const BST<keyT, dataT>& tree);
+        int size;
+
+        BST() : root(nullptr), size(0) {}
         ~BST() = default;
         std::shared_ptr<dataT> Get(const keyT& target);
         bool Find(const keyT& target);
-        dataT* InOrderNElements(const int n);
         void Insert(const keyT& key,const dataT& data);
         void Remove(const keyT& key);
         BST<keyT, dataT> Merge(const BST<keyT, dataT>& tree_to_merge);
+        dataT& GetMax();
+        dataT& GetMin();
             
 };
-
-/*template <class keyT,class dataT>
-BST<keyT, dataT>::BST(const BST<keyT, dataT>& tree)
-{
-
-}//later
-*/
 
 template <class keyT, class dataT>
 std::shared_ptr<dataT> BST<keyT, dataT>::Get(const keyT& target)
@@ -102,39 +66,16 @@ bool BST<keyT, dataT>::Find(const keyT& target)
 }
 
 template <class keyT, class dataT>
-dataT* BST<keyT, dataT>::InOrderNElements(const int n)
-{
-    dataT* sorted_data = malloc(sizeof(*sorted_data) * n);
-    if(sorted_data == nullptr)
-        return nullptr;
-    BST<keyT, dataT>::InOrderAux(this, sorted_data, n);
-    return sorted_data;  
-}
-
-template <class keyT, class dataT>
-void BST<keyT, dataT>::InOrderAux(BST<keyT, dataT> root, dataT* sorted_data,int n)
-{
-    if (root == nullptr)
-        return;
-    if (n == 0)
-        return;
-    BST<keyT, dataT>::InOrderAux(root->left, sorted_data, n);
-    *sorted_data = dataT(*(root->data));
-    BST<keyT, dataT>::InOrderAux(root->right, sorted_data + 1, n - 1);
-
-    return;
-}
-
-template <class keyT, class dataT>
 void BST<keyT, dataT>::Insert(const keyT& key,const dataT& data)
 {
     if(this->Find(key))
         return;//handle it later
     
-    std::shared_ptr<dataT> copyData = std::shared_ptr<dataT>(new dataT(data)); 
+    std::shared_ptr<dataT> copyData = std::shared_ptr<dataT>(&data)); //changed from new dataT(data)
     auto toInsert = std::shared_ptr<Node<keyT, dataT>>(new Node<keyT, dataT>(key,copyData));
 
     this->root = BST<keyT, dataT>::InsertAux(this->root, toInsert);
+    this->size++;
 }
 
 template <class keyT, class dataT>
@@ -265,6 +206,7 @@ void BST<keyT, dataT>::Remove(const keyT& key)
         return;//handle it later
     
     this->root = BST<keyT, dataT>::RemoveAux(this->root, key);
+    this->size--;
 }
 
 template <class keyT, class dataT>
@@ -321,13 +263,34 @@ std::shared_ptr<Node<keyT, dataT>> BST<keyT, dataT>::FindNextInOrder(std::shared
     root = root->right;
     while(root->left != nullptr)
         root = root->left;
+
     return root;
 }
 
 template <class keyT, class dataT>
- BST<keyT, dataT> BST<keyT, dataT>::Merge(const BST<keyT, dataT>& tree_to_merge)
- {
-     
- }
+BST<keyT, dataT> BST<keyT, dataT>::Merge(const BST<keyT, dataT>& tree_to_merge)
+{
+    
+}
+
+template <class keyT, class dataT>
+dataT& BST<keyT, dataT>::GetMax()
+{
+    std::shared_ptr<Node<keyT, dataT>> curr = this->root;
+    while(curr->right != nullptr)
+        curr = curr->right;
+
+    return *(curr->data);
+}
+
+template <class keyT, class dataT>
+dataT& BST<keyT, dataT>::GetMin()
+{
+    std::shared_ptr<Node<keyT, dataT>> curr = this->root;
+    while(curr->left != nullptr)
+        curr = curr->left;
+
+    return *(curr->data);
+}
 
 #endif /* BST_H */
