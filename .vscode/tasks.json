@@ -8,6 +8,12 @@
 			"args": [
 				"-fdiagnostics-color=always",
 				"-g",
+				"-std=c++11",
+				"-DNDEBUG",
+				"-Wall",
+				"library1.cpp",
+				"playersmanager.cpp",
+				"map.cpp",
 				"${file}",
 				"-o",
 				"${fileDirname}\\${fileBasenameNoExtension}.exe"

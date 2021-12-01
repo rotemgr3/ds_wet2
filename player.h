@@ -5,8 +5,8 @@
 #include <memory>
 #include "group.h"
 
+class Group;
 class Player {
-    private:
     public:
         int playerId;
         int groupId;

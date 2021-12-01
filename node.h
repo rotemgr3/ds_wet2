@@ -11,6 +11,8 @@ class Node {
         std::shared_ptr<Node<keyT, dataT>> left;
         std::shared_ptr<Node<keyT, dataT>> right; 
         int height;
+        Node(int height) : key(), data(nullptr), 
+            left(nullptr), right(nullptr), height(height) {}
         Node(const keyT& key, std::shared_ptr<dataT> data) : key(key), data(data), 
             left(nullptr), right(nullptr), height(0) {}
         ~Node() = default;

@@ -1,7 +1,7 @@
 #ifndef LEVEL_H_
 #define LEVEL_H_
 
-#include <player.h>
+#include "player.h"
 
 class Level {
     private:
@@ -10,6 +10,8 @@ class Level {
         BST<int, Player> playersTree;
         Level(const int level) : levelId(level), playersTree() {}
         ~Level() = default;
+        bool operator<(const Level& level) { return this->levelId < level.levelId; }
+
         
 };
 

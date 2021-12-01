@@ -3,11 +3,8 @@
 
 #include <memory>
 #include "node.h"
+#include "map.h"
 
-int max(int a, int b)
-{
-    return (a > b)? a : b;
-}
 
 template <class keyT, class dataT>
 class BST {
@@ -23,6 +20,15 @@ class BST {
         static std::shared_ptr<Node<keyT, dataT>> RemoveAux(std::shared_ptr<Node<keyT, dataT>> root, const keyT& key);
         static std::shared_ptr<Node<keyT, dataT>> RemoveAlgo(std::shared_ptr<Node<keyT, dataT>> root);
         static std::shared_ptr<Node<keyT, dataT>> FindNextInOrder(std::shared_ptr<Node<keyT, dataT>> root);
+        static void SaveInOrder(const std::shared_ptr<Node<keyT, dataT>> root, std::shared_ptr<keyT> *keyArr, std::shared_ptr<dataT> *dataArr);
+        static void MergeArr(std::shared_ptr<keyT> *keyArr1, std::shared_ptr<keyT> *keyArr2, std::shared_ptr<dataT> *dataArr1,
+                                std::shared_ptr<dataT> *dataArr2, std::shared_ptr<keyT> *keyMergedArr, std::shared_ptr<dataT> *dataMergedArr);
+        static void InsertElements(std::shared_ptr<Node<keyT, dataT>> root, std::shared_ptr<keyT> *keyArr, std::shared_ptr<dataT> *dataArr);
+        static BST<keyT, dataT>* BuildEmptyTree(int n);
+        static void removeRightLeafs(std::shared_ptr<Node<keyT, dataT>> root, int removecount, int leafPathLen, int currPathLen);
+        static int FindHeightOfComplete(int num);
+        static std::shared_ptr<Node<keyT, dataT>> BuildCompleteTree(int h);
+        static int ComputeSizeOfComplete(int height);
 
 
     public:
@@ -30,15 +36,17 @@ class BST {
         int size;
 
         BST() : root(nullptr), size(0) {}
+        BST(std::shared_ptr<Node<keyT, dataT>> root, int size) : root(root), size(size) {}
         ~BST() = default;
         std::shared_ptr<dataT> Get(const keyT& target);
         bool Find(const keyT& target);
-        void Insert(const keyT& key,const dataT& data);
+        void Insert(const keyT& key, dataT& data);
         void Remove(const keyT& key);
-        BST<keyT, dataT> Merge(const BST<keyT, dataT>& tree_to_merge);
+        static BST<keyT, dataT>* Merge(const BST<keyT, dataT>& tree1, const BST<keyT, dataT>& tree2);
         dataT& GetMax();
         dataT& GetMin();
-            
+        static Map* MergeToArr(const BST<keyT, dataT>& tree1, const BST<keyT, dataT>& tree2);
+        static BST<keyT, dataT>* ArrToBST(Map* map, int size);            
 };
 
 template <class keyT, class dataT>
@@ -66,12 +74,12 @@ bool BST<keyT, dataT>::Find(const keyT& target)
 }
 
 template <class keyT, class dataT>
-void BST<keyT, dataT>::Insert(const keyT& key,const dataT& data)
+void BST<keyT, dataT>::Insert(const keyT& key, dataT& data)//removed const from dataT
 {
     if(this->Find(key))
         return;//handle it later
     
-    std::shared_ptr<dataT> copyData = std::shared_ptr<dataT>(&data)); //changed from new dataT(data)
+    std::shared_ptr<dataT> copyData = std::shared_ptr<dataT>(&data); //changed from new dataT(data)
     auto toInsert = std::shared_ptr<Node<keyT, dataT>>(new Node<keyT, dataT>(key,copyData));
 
     this->root = BST<keyT, dataT>::InsertAux(this->root, toInsert);
@@ -103,8 +111,8 @@ std::shared_ptr<Node<keyT, dataT>> BST<keyT, dataT>::LLRotation(std::shared_ptr<
     B->left = AR;
     A->right = B;
     
-    B->height = max(GetHeight(B->left), GetHeight(B->right)) + 1;
-    A->height = max(GetHeight(A->left), GetHeight(A->right)) + 1;   
+    B->height = std::max(GetHeight(B->left), GetHeight(B->right)) + 1;
+    A->height = std::max(GetHeight(A->left), GetHeight(A->right)) + 1;   
      
     return A;
 }
@@ -123,9 +131,9 @@ std::shared_ptr<Node<keyT, dataT>> BST<keyT, dataT>::LRRotation(std::shared_ptr<
     B->left = A;
     B->right = C;
 
-    A->height = max(GetHeight(A->left), GetHeight(A->right)) + 1;
-    C->height = max(GetHeight(C->left), GetHeight(C->right)) + 1;
-    B->height = max(GetHeight(B->left), GetHeight(B->right)) + 1;
+    A->height = std::max(GetHeight(A->left), GetHeight(A->right)) + 1;
+    C->height = std::max(GetHeight(C->left), GetHeight(C->right)) + 1;
+    B->height = std::max(GetHeight(B->left), GetHeight(B->right)) + 1;
     
     return B;
 }
@@ -144,9 +152,9 @@ std::shared_ptr<Node<keyT, dataT>> BST<keyT, dataT>::RLRotation(std::shared_ptr<
     B->right = A;
     B->left = C;
 
-    A->height = max(GetHeight(A->left), GetHeight(A->right)) + 1;
-    C->height = max(GetHeight(C->left), GetHeight(C->right)) + 1;
-    B->height = max(GetHeight(B->left), GetHeight(B->right)) + 1;
+    A->height = std::max(GetHeight(A->left), GetHeight(A->right)) + 1;
+    C->height = std::max(GetHeight(C->left), GetHeight(C->right)) + 1;
+    B->height = std::max(GetHeight(B->left), GetHeight(B->right)) + 1;
 
     return B;
 }
@@ -162,8 +170,8 @@ std::shared_ptr<Node<keyT, dataT>> BST<keyT, dataT>::RRRotation(std::shared_ptr<
     B->right = AL;
     A->left = B;
     
-    B->height = max(GetHeight(B->left), GetHeight(B->right)) + 1;
-    A->height = max(GetHeight(A->left), GetHeight(A->right)) + 1;
+    B->height = std::max(GetHeight(B->left), GetHeight(B->right)) + 1;
+    A->height = std::max(GetHeight(A->left), GetHeight(A->right)) + 1;
     
     return A;
 }
@@ -181,7 +189,7 @@ std::shared_ptr<Node<keyT, dataT>> BST<keyT, dataT>::InsertAux(std::shared_ptr<N
     else
         root->left = BST<keyT, dataT>::InsertAux(root->left, toInsert);
     
-    root->height = max(GetHeight(root->left), GetHeight(root->right)) + 1;
+    root->height = std::max(GetHeight(root->left), GetHeight(root->right)) + 1;
     int balanceFactor = GetBF(root);
 
     if (balanceFactor == 2) {
@@ -220,7 +228,7 @@ std::shared_ptr<Node<keyT, dataT>> BST<keyT, dataT>::RemoveAux(std::shared_ptr<N
     else
         root->left = BST<keyT, dataT>::RemoveAux(root->left, key);
     
-    root->height = max(GetHeight(root->left), GetHeight(root->right)) + 1;
+    root->height = std::max(GetHeight(root->left), GetHeight(root->right)) + 1;
     int balanceFactor = GetBF(root);
 
     if (balanceFactor == 2) {
@@ -268,9 +276,180 @@ std::shared_ptr<Node<keyT, dataT>> BST<keyT, dataT>::FindNextInOrder(std::shared
 }
 
 template <class keyT, class dataT>
-BST<keyT, dataT> BST<keyT, dataT>::Merge(const BST<keyT, dataT>& tree_to_merge)
+void BST<keyT, dataT>::MergeArr(std::shared_ptr<keyT> *keyArr1, std::shared_ptr<keyT> *keyArr2, std::shared_ptr<dataT> *dataArr1,
+                                std::shared_ptr<dataT> *dataArr2, std::shared_ptr<keyT> *keyMergedArr, std::shared_ptr<dataT> *dataMergedArr)
 {
+    while (keyArr1 != nullptr && keyArr2 != nullptr) {
+        if (**keyArr1 < **keyArr2) {
+            *keyMergedArr = *keyArr1;
+            *dataMergedArr = *dataArr1;
+            keyArr1++;
+            dataArr1++;
+        }
+        else {
+            *keyMergedArr = *keyArr2;
+            *dataMergedArr = *dataArr2;
+            keyArr2++;
+            dataArr2++;
+        }
+        keyMergedArr++;
+        dataMergedArr++;
+    }
+
+    while (keyArr1 != nullptr) {
+        *keyMergedArr = *keyArr1;
+        *dataMergedArr = *dataArr1;
+        keyArr1++;
+        dataArr1++;
+        keyMergedArr++;
+        dataMergedArr++;
+    }
     
+    while (keyArr2 != nullptr) {
+        *keyMergedArr = *keyArr2;
+        *dataMergedArr = *dataArr2;
+        keyArr2++;
+        dataArr2++;
+        keyMergedArr++;
+        dataMergedArr++;
+    }
+}
+
+template <class keyT, class dataT>
+void BST<keyT, dataT>::SaveInOrder(const std::shared_ptr<Node<keyT, dataT>> root, std::shared_ptr<keyT> *keyArr, std::shared_ptr<dataT> *dataArr)
+{
+    if(root == nullptr)
+        return;
+    BST<keyT, dataT>::SaveInOrder(root->left, keyArr, dataArr);
+    root->key = **keyArr;
+    root->data = *dataArr;
+    BST<keyT, dataT>::SaveInOrder(root->left, keyArr + 1, dataArr + 1);
+}
+
+template <class keyT, class dataT>
+BST<keyT, dataT>* BST<keyT, dataT>::Merge(const BST<keyT, dataT>& tree1, const BST<keyT, dataT>& tree2)
+{
+    Map* map = BST<keyT, dataT>::MergeToArr(tree1, tree2);
+    BST<keyT, dataT> *mergedBST = BST<keyT, dataT>::BuildEmptyTree(tree1.size + tree2.size);
+    BST<keyT, dataT>::InsertElements(mergedBST->root, (std::shared_ptr<keyT> *)(map->key), (std::shared_ptr<dataT> *)(map->data));
+    MapDestroy(map);
+    return mergedBST;   
+}
+
+template <class keyT, class dataT>
+Map* BST<keyT, dataT>::MergeToArr(const BST<keyT, dataT>& tree1, const BST<keyT, dataT>& tree2)
+{
+    std::shared_ptr<dataT> *dataArr1 = new std::shared_ptr<dataT>[tree1.size];
+    std::shared_ptr<dataT> *dataArr2 = new std::shared_ptr<dataT>[tree2.size];
+    std::shared_ptr<dataT> *dataMergedArr = new std::shared_ptr<dataT>[tree1.size + tree2.size];
+    std::shared_ptr<keyT> *keyArr1 = new std::shared_ptr<keyT>[tree1.size];
+    std::shared_ptr<keyT> *keyArr2 = new std::shared_ptr<keyT>[tree2.size];
+    std::shared_ptr<keyT> *keyMergedArr = new std::shared_ptr<keyT>[tree1.size + tree2.size];
+    SaveInOrder(tree1.root, keyArr1, dataArr1);
+    SaveInOrder(tree2.root, keyArr2, dataArr2);
+    MergeArr(keyArr1, keyArr2, dataArr1, dataArr2, keyMergedArr, dataMergedArr);
+    Map* map = MapCreate((void*)keyMergedArr, (void*)dataMergedArr);
+    return map;  
+}
+
+template <class keyT, class dataT>
+BST<keyT, dataT>* BST<keyT, dataT>::ArrToBST(Map* map, int size)
+{
+    BST<keyT, dataT> *mergedBST = BST<keyT, dataT>::BuildEmptyTree(size);
+    BST<keyT, dataT>::InsertElements(mergedBST->root, (std::shared_ptr<keyT> *)(map->key), (std::shared_ptr<dataT> *)(map->data));
+    return mergedBST;   
+}
+
+
+template <class keyT, class dataT>
+void BST<keyT, dataT>::InsertElements(std::shared_ptr<Node<keyT, dataT>> root, std::shared_ptr<keyT> *keyArr, std::shared_ptr<dataT> *dataArr)
+{
+    if(root == nullptr)
+        return;
+
+    BST<keyT, dataT>::InsertElements(root->left, keyArr, dataArr);
+    while (dataArr != nullptr) {
+        dataArr++;
+        keyArr++;
+    }
+    root->data = *dataArr;
+    root->key = **keyArr;
+
+    BST<keyT, dataT>::InsertElements(root->right, keyArr + 1, dataArr + 1);
+
+    return;
+}
+
+template <class keyT, class dataT>
+BST<keyT, dataT>* BST<keyT, dataT>::BuildEmptyTree(int n)
+{
+    int completeHeight = BST<keyT, dataT>::FindHeightOfComplete(n + 1);
+    int completeSize = BST<keyT, dataT>::ComputeSizeOfComplete(completeHeight);
+    BST<keyT, dataT> *res = new BST<keyT, dataT>(BST<keyT, dataT>::BuildCompleteTree(completeHeight), completeSize);
+    removeRightLeafs(res->root, completeSize - n, completeHeight, 0);
+    res->size -= completeSize - n;
+    return res;
+}
+
+template <class keyT, class dataT>
+void BST<keyT, dataT>::removeRightLeafs(std::shared_ptr<Node<keyT, dataT>> root, int removecount, int leafPathLen, int currPathLen)
+{
+    if(root == nullptr || removecount == 0)
+        return;
+
+    BST<keyT, dataT>::removeRightLeafs(root->right, removecount, leafPathLen, currPathLen + 1);
+
+    if (currPathLen + 1 == leafPathLen) {
+        root->right = nullptr;
+        removecount--;
+    }
+    if (currPathLen + 1 == leafPathLen && removecount > 0) {
+        root->left = nullptr;
+        removecount--;
+        root->height--;
+    }
+
+    BST<keyT, dataT>::removeRightLeafs(root->left, removecount, leafPathLen, currPathLen + 1);
+    return;
+}
+
+
+template <class keyT, class dataT>
+std::shared_ptr<Node<keyT, dataT>> BST<keyT, dataT>::BuildCompleteTree(int h)
+{
+    if (h == 0)
+        return nullptr;
+    std::shared_ptr<Node<keyT, dataT>> root = std::shared_ptr<Node<keyT, dataT>>(new Node<keyT, dataT>(h));
+    root->right = BST<keyT, dataT>::BuildCompleteTree(h - 1);
+    root->left = BST<keyT, dataT>::BuildCompleteTree(h - 1);
+    return root;
+}
+
+template <class keyT, class dataT>
+int BST<keyT, dataT>::FindHeightOfComplete(int num)
+{
+    int twoPow = 1;
+    int height = -1;
+    while(twoPow < num)
+    {
+        twoPow *= 2;
+        height++;
+    }
+    return height;
+}
+
+template <class keyT, class dataT>
+int BST<keyT, dataT>::ComputeSizeOfComplete(int height)
+{
+    int n = 1;
+    int count = 1;
+
+    while(count <= height + 1) {
+        n *= 2;
+        count++;
+    }
+
+    return n - 1;
 }
 
 template <class keyT, class dataT>

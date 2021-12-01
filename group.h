@@ -4,6 +4,7 @@
 
 #include <memory>
 #include "maxlevel.h"
+#include "level.h"
 #include "BST.h"
 
 class Group {
