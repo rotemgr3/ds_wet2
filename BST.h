@@ -57,6 +57,7 @@ std::shared_ptr<dataT> BST<keyT, dataT>::Get(const keyT& target)
     {
         if(curr->key == target)
             return curr->data;
+        
         if(curr->key < target)
             curr = curr->right;
         else

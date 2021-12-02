@@ -62,7 +62,7 @@ PMStatusType PlayersManager::AddPlayer(const int playerId, const int groupId, co
     try {
         Player *newPlayer = new Player(playerId, groupId, level);//allocation
         if (groupPtr == nullptr)
-            std::shared_ptr<Group> groupPtr = this->groupsTree.Get(groupId);
+            groupPtr = this->groupsTree.Get(groupId);
         newPlayer->groupPtr = groupPtr;
         
         this->allPlayersTree.Insert(playerId, *newPlayer);
