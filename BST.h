@@ -13,23 +13,25 @@ class BST {
                                                             std::shared_ptr<Node<keyT, dataT>> toInsert); 
         static int GetBF(std::shared_ptr<Node<keyT, dataT>> node);
         static int GetHeight(std::shared_ptr<Node<keyT, dataT>> node);
-        static std::shared_ptr<Node<keyT, dataT>> LLRotation(std::shared_ptr<Node<keyT, dataT>> root);
-        static std::shared_ptr<Node<keyT, dataT>> LRRotation(std::shared_ptr<Node<keyT, dataT>> root);
-        static std::shared_ptr<Node<keyT, dataT>> RLRotation(std::shared_ptr<Node<keyT, dataT>> root);
-        static std::shared_ptr<Node<keyT, dataT>> RRRotation(std::shared_ptr<Node<keyT, dataT>> root);
-        static std::shared_ptr<Node<keyT, dataT>> RemoveAux(std::shared_ptr<Node<keyT, dataT>> root, const keyT& key);
-        static std::shared_ptr<Node<keyT, dataT>> RemoveAlgo(std::shared_ptr<Node<keyT, dataT>> root);
+        static std::shared_ptr<Node<keyT, dataT>> LLRotation(std::shared_ptr<Node<keyT, dataT>>& root);
+        static std::shared_ptr<Node<keyT, dataT>> LRRotation(std::shared_ptr<Node<keyT, dataT>>& root);
+        static std::shared_ptr<Node<keyT, dataT>> RLRotation(std::shared_ptr<Node<keyT, dataT>>& root);
+        static std::shared_ptr<Node<keyT, dataT>> RRRotation(std::shared_ptr<Node<keyT, dataT>>& root);
+        static std::shared_ptr<Node<keyT, dataT>> RemoveAux(std::shared_ptr<Node<keyT, dataT>>& root, const keyT& key);
+        static std::shared_ptr<Node<keyT, dataT>> RemoveAlgo(std::shared_ptr<Node<keyT, dataT>>& root);
         static std::shared_ptr<Node<keyT, dataT>> FindNextInOrder(std::shared_ptr<Node<keyT, dataT>> root);
         static void SaveInOrder(const std::shared_ptr<Node<keyT, dataT>> root, std::shared_ptr<keyT> *keyArr, std::shared_ptr<dataT> *dataArr);
         static void MergeArr(std::shared_ptr<keyT> *keyArr1, std::shared_ptr<keyT> *keyArr2, std::shared_ptr<dataT> *dataArr1,
-                                std::shared_ptr<dataT> *dataArr2, std::shared_ptr<keyT> *keyMergedArr, std::shared_ptr<dataT> *dataMergedArr);
-        static void InsertElements(std::shared_ptr<Node<keyT, dataT>> root, std::shared_ptr<keyT> *keyArr, std::shared_ptr<dataT> *dataArr);
+                                std::shared_ptr<dataT> *dataArr2, std::shared_ptr<keyT> *keyMergedArr, std::shared_ptr<dataT> *dataMergedArr,
+                                int size1, int size2);
+        static void InsertElements(std::shared_ptr<Node<keyT, dataT>> root, std::shared_ptr<keyT> *keyArr,
+                                   std::shared_ptr<dataT> *dataArr, int size, int *i);
         static BST<keyT, dataT>* BuildEmptyTree(int n);
         static void removeRightLeafs(std::shared_ptr<Node<keyT, dataT>> root, int removecount, int leafPathLen, int currPathLen);
         static int FindHeightOfComplete(int num);
         static std::shared_ptr<Node<keyT, dataT>> BuildCompleteTree(int h);
         static int ComputeSizeOfComplete(int height);
-
+        static std::shared_ptr<Node<keyT, dataT>> DeleteInOrder(std::shared_ptr<Node<keyT, dataT>> root);
 
     public:
         std::shared_ptr<Node<keyT, dataT>> root;
@@ -40,13 +42,13 @@ class BST {
         ~BST() = default;
         std::shared_ptr<dataT> Get(const keyT& target);
         bool Find(const keyT& target);
-        void Insert(const keyT& key, dataT& data);
+        void Insert(const keyT& key, std::shared_ptr<dataT>& data);
         void Remove(const keyT& key);
         static BST<keyT, dataT>* Merge(const BST<keyT, dataT>& tree1, const BST<keyT, dataT>& tree2);
         dataT& GetMax();
         dataT& GetMin();
         static Map* MergeToArr(const BST<keyT, dataT>& tree1, const BST<keyT, dataT>& tree2);
-        static BST<keyT, dataT>* ArrToBST(Map* map, int size);            
+        static BST<keyT, dataT>* ArrToBST(Map* map, int size, int oldSize);            
 };
 
 template <class keyT, class dataT>
@@ -57,6 +59,7 @@ std::shared_ptr<dataT> BST<keyT, dataT>::Get(const keyT& target)
     {
         if(curr->key == target)
             return curr->data;
+        
         if(curr->key < target)
             curr = curr->right;
         else
@@ -74,12 +77,12 @@ bool BST<keyT, dataT>::Find(const keyT& target)
 }
 
 template <class keyT, class dataT>
-void BST<keyT, dataT>::Insert(const keyT& key, dataT& data)//removed const from dataT
+void BST<keyT, dataT>::Insert(const keyT& key, std::shared_ptr<dataT>& dataPtr)//removed const from dataT
 {
     if(this->Find(key))
         return;//handle it later
     
-    std::shared_ptr<dataT> copyData = std::shared_ptr<dataT>(&data); //changed from new dataT(data)
+    std::shared_ptr<dataT> copyData = std::shared_ptr<dataT>(dataPtr); //changed from new dataT(data)
     auto toInsert = std::shared_ptr<Node<keyT, dataT>>(new Node<keyT, dataT>(key,copyData));
 
     this->root = BST<keyT, dataT>::InsertAux(this->root, toInsert);
@@ -101,7 +104,7 @@ int BST<keyT, dataT>::GetBF(std::shared_ptr<Node<keyT, dataT>> node)
 }
 
 template <class keyT, class dataT>
-std::shared_ptr<Node<keyT, dataT>> BST<keyT, dataT>::LLRotation(std::shared_ptr<Node<keyT, dataT>> root)
+std::shared_ptr<Node<keyT, dataT>> BST<keyT, dataT>::LLRotation(std::shared_ptr<Node<keyT, dataT>>& root)
 {
     std::shared_ptr<Node<keyT, dataT>> B = root;
     std::shared_ptr<Node<keyT, dataT>> A = B->left;
@@ -118,7 +121,7 @@ std::shared_ptr<Node<keyT, dataT>> BST<keyT, dataT>::LLRotation(std::shared_ptr<
 }
 
 template <class keyT, class dataT>
-std::shared_ptr<Node<keyT, dataT>> BST<keyT, dataT>::LRRotation(std::shared_ptr<Node<keyT, dataT>> root)
+std::shared_ptr<Node<keyT, dataT>> BST<keyT, dataT>::LRRotation(std::shared_ptr<Node<keyT, dataT>>& root)
 {
     std::shared_ptr<Node<keyT, dataT>> A = root->left;
     std::shared_ptr<Node<keyT, dataT>> B = A->right;
@@ -139,7 +142,7 @@ std::shared_ptr<Node<keyT, dataT>> BST<keyT, dataT>::LRRotation(std::shared_ptr<
 }
 
 template <class keyT, class dataT>
-std::shared_ptr<Node<keyT, dataT>> BST<keyT, dataT>::RLRotation(std::shared_ptr<Node<keyT, dataT>> root)
+std::shared_ptr<Node<keyT, dataT>> BST<keyT, dataT>::RLRotation(std::shared_ptr<Node<keyT, dataT>>& root)
 {
     std::shared_ptr<Node<keyT, dataT>> A = root->right;
     std::shared_ptr<Node<keyT, dataT>> B = A->left;
@@ -160,7 +163,7 @@ std::shared_ptr<Node<keyT, dataT>> BST<keyT, dataT>::RLRotation(std::shared_ptr<
 }
 
 template <class keyT, class dataT>
-std::shared_ptr<Node<keyT, dataT>> BST<keyT, dataT>::RRRotation(std::shared_ptr<Node<keyT, dataT>> root)
+std::shared_ptr<Node<keyT, dataT>> BST<keyT, dataT>::RRRotation(std::shared_ptr<Node<keyT, dataT>>& root)
 {
     std::shared_ptr<Node<keyT, dataT>> B = root;
     std::shared_ptr<Node<keyT, dataT>> A = B->right;
@@ -218,7 +221,7 @@ void BST<keyT, dataT>::Remove(const keyT& key)
 }
 
 template <class keyT, class dataT>
-std::shared_ptr<Node<keyT, dataT>> BST<keyT, dataT>::RemoveAux(std::shared_ptr<Node<keyT, dataT>> root, const keyT& key)
+std::shared_ptr<Node<keyT, dataT>> BST<keyT, dataT>::RemoveAux(std::shared_ptr<Node<keyT, dataT>>& root, const keyT& key)
 {
     if (root->key == key) 
         return BST<keyT, dataT>::RemoveAlgo(root);
@@ -247,7 +250,7 @@ std::shared_ptr<Node<keyT, dataT>> BST<keyT, dataT>::RemoveAux(std::shared_ptr<N
 }
 
 template <class keyT, class dataT>
-std::shared_ptr<Node<keyT, dataT>> BST<keyT, dataT>::RemoveAlgo(std::shared_ptr<Node<keyT, dataT>> root)
+std::shared_ptr<Node<keyT, dataT>> BST<keyT, dataT>::RemoveAlgo(std::shared_ptr<Node<keyT, dataT>>& root)
 {
     if (!root->left && !root->right)
         return nullptr;
@@ -277,41 +280,46 @@ std::shared_ptr<Node<keyT, dataT>> BST<keyT, dataT>::FindNextInOrder(std::shared
 
 template <class keyT, class dataT>
 void BST<keyT, dataT>::MergeArr(std::shared_ptr<keyT> *keyArr1, std::shared_ptr<keyT> *keyArr2, std::shared_ptr<dataT> *dataArr1,
-                                std::shared_ptr<dataT> *dataArr2, std::shared_ptr<keyT> *keyMergedArr, std::shared_ptr<dataT> *dataMergedArr)
+                                std::shared_ptr<dataT> *dataArr2, std::shared_ptr<keyT> *keyMergedArr, std::shared_ptr<dataT> *dataMergedArr,
+                                int size1, int size2)
 {
-    while (keyArr1 != nullptr && keyArr2 != nullptr) {
+    while (size1 > 0 && size2 > 0) {
         if (**keyArr1 < **keyArr2) {
-            *keyMergedArr = *keyArr1;
-            *dataMergedArr = *dataArr1;
+            *keyMergedArr = std::shared_ptr<keyT>(*keyArr1);
+            *dataMergedArr = std::shared_ptr<dataT>(*dataArr1);
             keyArr1++;
             dataArr1++;
+            size1--;
         }
         else {
-            *keyMergedArr = *keyArr2;
-            *dataMergedArr = *dataArr2;
+            *keyMergedArr = std::shared_ptr<keyT>(*keyArr2);
+            *dataMergedArr = std::shared_ptr<dataT>(*dataArr2);
             keyArr2++;
             dataArr2++;
+            size2--;
         }
         keyMergedArr++;
         dataMergedArr++;
     }
 
-    while (keyArr1 != nullptr) {
-        *keyMergedArr = *keyArr1;
-        *dataMergedArr = *dataArr1;
+    while (size1 > 0) {    
+        *keyMergedArr = std::shared_ptr<keyT>(*keyArr1);
+        *dataMergedArr = std::shared_ptr<dataT>(*dataArr1);
         keyArr1++;
         dataArr1++;
         keyMergedArr++;
         dataMergedArr++;
+        size1--;
     }
     
-    while (keyArr2 != nullptr) {
-        *keyMergedArr = *keyArr2;
-        *dataMergedArr = *dataArr2;
+    while (size2 > 0) {    
+        *keyMergedArr = std::shared_ptr<keyT>(*keyArr2);
+        *dataMergedArr = std::shared_ptr<dataT>(*dataArr2);
         keyArr2++;
         dataArr2++;
         keyMergedArr++;
         dataMergedArr++;
+        size2--;
     }
 }
 
@@ -321,9 +329,9 @@ void BST<keyT, dataT>::SaveInOrder(const std::shared_ptr<Node<keyT, dataT>> root
     if(root == nullptr)
         return;
     BST<keyT, dataT>::SaveInOrder(root->left, keyArr, dataArr);
-    root->key = **keyArr;
-    root->data = *dataArr;
-    BST<keyT, dataT>::SaveInOrder(root->left, keyArr + 1, dataArr + 1);
+    *keyArr = std::shared_ptr<keyT>(&root->key);
+    *dataArr = std::shared_ptr<dataT>(root->data);
+    BST<keyT, dataT>::SaveInOrder(root->right, keyArr + 1, dataArr + 1);
 }
 
 template <class keyT, class dataT>
@@ -331,7 +339,8 @@ BST<keyT, dataT>* BST<keyT, dataT>::Merge(const BST<keyT, dataT>& tree1, const B
 {
     Map* map = BST<keyT, dataT>::MergeToArr(tree1, tree2);
     BST<keyT, dataT> *mergedBST = BST<keyT, dataT>::BuildEmptyTree(tree1.size + tree2.size);
-    BST<keyT, dataT>::InsertElements(mergedBST->root, (std::shared_ptr<keyT> *)(map->key), (std::shared_ptr<dataT> *)(map->data));
+    int i = 0;
+    BST<keyT, dataT>::InsertElements(mergedBST->root, (std::shared_ptr<keyT> *)(map->key), (std::shared_ptr<dataT> *)(map->data), tree1.size + tree2.size, &i);
     MapDestroy(map);
     return mergedBST;   
 }
@@ -347,35 +356,40 @@ Map* BST<keyT, dataT>::MergeToArr(const BST<keyT, dataT>& tree1, const BST<keyT,
     std::shared_ptr<keyT> *keyMergedArr = new std::shared_ptr<keyT>[tree1.size + tree2.size];
     SaveInOrder(tree1.root, keyArr1, dataArr1);
     SaveInOrder(tree2.root, keyArr2, dataArr2);
-    MergeArr(keyArr1, keyArr2, dataArr1, dataArr2, keyMergedArr, dataMergedArr);
+    MergeArr(keyArr1, keyArr2, dataArr1, dataArr2, keyMergedArr, dataMergedArr, tree1.size, tree2.size);
     Map* map = MapCreate((void*)keyMergedArr, (void*)dataMergedArr);
     return map;  
 }
 
 template <class keyT, class dataT>
-BST<keyT, dataT>* BST<keyT, dataT>::ArrToBST(Map* map, int size)
+BST<keyT, dataT>* BST<keyT, dataT>::ArrToBST(Map* map, int size, int oldSize)
 {
     BST<keyT, dataT> *mergedBST = BST<keyT, dataT>::BuildEmptyTree(size);
-    BST<keyT, dataT>::InsertElements(mergedBST->root, (std::shared_ptr<keyT> *)(map->key), (std::shared_ptr<dataT> *)(map->data));
+    int i = 0;
+    BST<keyT, dataT>::InsertElements(mergedBST->root, (std::shared_ptr<keyT> *)(map->key), (std::shared_ptr<dataT> *)(map->data), oldSize, &i);
     return mergedBST;   
 }
 
 
 template <class keyT, class dataT>
-void BST<keyT, dataT>::InsertElements(std::shared_ptr<Node<keyT, dataT>> root, std::shared_ptr<keyT> *keyArr, std::shared_ptr<dataT> *dataArr)
+void BST<keyT, dataT>::InsertElements(std::shared_ptr<Node<keyT, dataT>> root, std::shared_ptr<keyT> *keyArr,
+                                      std::shared_ptr<dataT> *dataArr, int size, int *i)
 {
-    if(root == nullptr)
+    if(root == nullptr || size == 0)
         return;
 
-    BST<keyT, dataT>::InsertElements(root->left, keyArr, dataArr);
-    while (dataArr != nullptr) {
+    
+    BST<keyT, dataT>::InsertElements(root->left, keyArr, dataArr, size, i);
+    
+    while (*dataArr == nullptr) {
         dataArr++;
         keyArr++;
     }
-    root->data = *dataArr;
-    root->key = **keyArr;
-
-    BST<keyT, dataT>::InsertElements(root->right, keyArr + 1, dataArr + 1);
+    root->data = dataArr[*i];
+    root->key = *(keyArr[*i]);
+    (*i)++;
+    size--;
+    BST<keyT, dataT>::InsertElements(root->right, keyArr, dataArr, size, i);
 
     return;
 }
@@ -417,7 +431,7 @@ void BST<keyT, dataT>::removeRightLeafs(std::shared_ptr<Node<keyT, dataT>> root,
 template <class keyT, class dataT>
 std::shared_ptr<Node<keyT, dataT>> BST<keyT, dataT>::BuildCompleteTree(int h)
 {
-    if (h == 0)
+    if (h == -1)
         return nullptr;
     std::shared_ptr<Node<keyT, dataT>> root = std::shared_ptr<Node<keyT, dataT>>(new Node<keyT, dataT>(h));
     root->right = BST<keyT, dataT>::BuildCompleteTree(h - 1);
@@ -471,5 +485,20 @@ dataT& BST<keyT, dataT>::GetMin()
 
     return *(curr->data);
 }
+/*template <class keyT, class dataT>
+BST<keyT, dataT>::~BST()
+{
+    this->root = DeleteInOrder(this->root);
+    this->size = 0;
+}
 
+template <class keyT, class dataT>
+std::shared_ptr<Node<keyT, dataT>> BST<keyT, dataT>::DeleteInOrder(std::shared_ptr<Node<keyT, dataT>> root)
+{
+    if(root == nullptr)
+        return nullptr;
+    root->left = DeleteInOrder(root->left);
+    root->right = DeleteInOrder(root->right);
+    return nullptr;
+}*/
 #endif /* BST_H */

@@ -15,6 +15,7 @@ class Group {
         BST<int, Level> levelsTree;
         int numOfPlayers;
         Group(const int groupId) : groupId(groupId), maxLevel(), levelsTree(), numOfPlayers(0) {}
+        Group() = default;
         ~Group() = default;     
 
 };

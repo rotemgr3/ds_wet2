@@ -11,8 +11,8 @@ class Player {
         int playerId;
         int groupId;
         int level;
-        std::shared_ptr<Group> groupPtr;
-        Player(const int playerId, const int groupId, const int level) : playerId(playerId), groupId(groupId), level(level), groupPtr(nullptr) {}
+        std::weak_ptr<Group> groupPtr;
+        Player(const int playerId, const int groupId, const int level) : playerId(playerId), groupId(groupId), level(level), groupPtr() {}
         Player(const Player& player) = default;
         ~Player() = default;
 };
