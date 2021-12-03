@@ -107,10 +107,16 @@ void PlayersManager::RemovePlayerallLevelsTree(BST<int, Level>& allLevelsTree, c
 
 void PlayersManager::SearchAndUpdateMaxLevel(BST<int, Level>& levelsTree, MaxLevel& maxlevel)
 {
-    Level maxLevel = levelsTree.GetMax();
-    int newMaxLevel = maxLevel.levelId;
-    int newMaxPlayerId = maxLevel.playersTree.GetMin().playerId;
-    PlayersManager::UpdateMaxLevel(maxlevel, newMaxLevel, newMaxPlayerId);
+    if (levelsTree.size == 0) {
+        maxlevel.level = -1;
+        maxlevel.playerId = -1;
+    }
+    else {
+        Level maxLevel = levelsTree.GetMax();
+        int newMaxLevel = maxLevel.levelId;
+        int newMaxPlayerId = maxLevel.playersTree.GetMin().playerId;
+        PlayersManager::UpdateMaxLevel(maxlevel, newMaxLevel, newMaxPlayerId);
+    }
 }
 
 PMStatusType PlayersManager::RemovePlayer(const int playerId)
@@ -156,10 +162,10 @@ PMStatusType PlayersManager::ReplaceGroup(const int groupId, const int replaceme
     
         map = BST<int, Level>::MergeToArr(group->levelsTree, replacement->levelsTree);
         int newSize = PlayersManager::RemoveDuplicates(map, group->levelsTree.size + replacement->levelsTree.size);
-        BST<int, Level> merged = *(BST<int, Level>::ArrToBST(map, newSize, group->levelsTree.size + replacement->levelsTree.size));
+        BST<int, Level> merged = BST<int, Level>::ArrToBST(map, newSize, group->levelsTree.size + replacement->levelsTree.size);
         PlayersManager::UpdateLevels(merged.root, replacement, replacementId);
         replacement->numOfPlayers += group->numOfPlayers;
-        replacement->levelsTree.root = std::make_shared<Node<int, Level>>(*(merged.root));
+        replacement->levelsTree.root = std::make_shared<Node<int,Level>>(*(merged.root));
         replacement->levelsTree.size = merged.size;
         PlayersManager::UpdateMaxLevel(replacement->maxLevel, group->maxLevel.level,  group->maxLevel.playerId);
         this->nonEmptyGroupsTree.Remove(groupId);
@@ -202,7 +208,7 @@ int PlayersManager::RemoveDuplicates(Map *map, int n)
         if (dataArr[i] == nullptr)
             continue;
         if (*(keyArr[i]) == *(keyArr[i + 1])) {
-            dataArr[i]->playersTree = *(BST<int, Player>::Merge(dataArr[i]->playersTree, dataArr[i + 1]->playersTree));
+            dataArr[i]->playersTree = BST<int, Player>::Merge(dataArr[i]->playersTree, dataArr[i + 1]->playersTree);
             //dataArr[i + 1].reset();
             dataArr[i + 1] = nullptr;
             newsize--;

@@ -26,7 +26,7 @@ class BST {
                                 int size1, int size2);
         static void InsertElements(std::shared_ptr<Node<keyT, dataT>> root, std::shared_ptr<keyT> *keyArr,
                                    std::shared_ptr<dataT> *dataArr, int size, int *i);
-        static BST<keyT, dataT>* BuildEmptyTree(int n);
+        static BST<keyT, dataT> BuildEmptyTree(int n);
         static void removeRightLeafs(std::shared_ptr<Node<keyT, dataT>> root, int removecount, int leafPathLen, int currPathLen);
         static int FindHeightOfComplete(int num);
         static std::shared_ptr<Node<keyT, dataT>> BuildCompleteTree(int h);
@@ -44,11 +44,11 @@ class BST {
         bool Find(const keyT& target);
         void Insert(const keyT& key, std::shared_ptr<dataT>& data);
         void Remove(const keyT& key);
-        static BST<keyT, dataT>* Merge(const BST<keyT, dataT>& tree1, const BST<keyT, dataT>& tree2);
+        static BST<keyT, dataT> Merge(const BST<keyT, dataT>& tree1, const BST<keyT, dataT>& tree2);
         dataT& GetMax();
         dataT& GetMin();
         static Map* MergeToArr(const BST<keyT, dataT>& tree1, const BST<keyT, dataT>& tree2);
-        static BST<keyT, dataT>* ArrToBST(Map* map, int size, int oldSize);            
+        static BST<keyT, dataT> ArrToBST(Map* map, int size, int oldSize);            
 };
 
 template <class keyT, class dataT>
@@ -335,12 +335,12 @@ void BST<keyT, dataT>::SaveInOrder(const std::shared_ptr<Node<keyT, dataT>> root
 }
 
 template <class keyT, class dataT>
-BST<keyT, dataT>* BST<keyT, dataT>::Merge(const BST<keyT, dataT>& tree1, const BST<keyT, dataT>& tree2)
+BST<keyT, dataT> BST<keyT, dataT>::Merge(const BST<keyT, dataT>& tree1, const BST<keyT, dataT>& tree2)
 {
     Map* map = BST<keyT, dataT>::MergeToArr(tree1, tree2);
-    BST<keyT, dataT> *mergedBST = BST<keyT, dataT>::BuildEmptyTree(tree1.size + tree2.size);
+    BST<keyT, dataT> mergedBST = BST<keyT, dataT>::BuildEmptyTree(tree1.size + tree2.size);
     int i = 0;
-    BST<keyT, dataT>::InsertElements(mergedBST->root, (std::shared_ptr<keyT> *)(map->key), (std::shared_ptr<dataT> *)(map->data), tree1.size + tree2.size, &i);
+    BST<keyT, dataT>::InsertElements(mergedBST.root, (std::shared_ptr<keyT> *)(map->key), (std::shared_ptr<dataT> *)(map->data), tree1.size + tree2.size, &i);
     MapDestroy(map);
     return mergedBST;   
 }
@@ -357,16 +357,22 @@ Map* BST<keyT, dataT>::MergeToArr(const BST<keyT, dataT>& tree1, const BST<keyT,
     SaveInOrder(tree1.root, keyArr1, dataArr1);
     SaveInOrder(tree2.root, keyArr2, dataArr2);
     MergeArr(keyArr1, keyArr2, dataArr1, dataArr2, keyMergedArr, dataMergedArr, tree1.size, tree2.size);
+    delete[] dataArr1;
+    delete[] dataArr2;
+    delete[] keyArr1;
+    delete[] keyArr2;
     Map* map = MapCreate((void*)keyMergedArr, (void*)dataMergedArr);
     return map;  
 }
 
 template <class keyT, class dataT>
-BST<keyT, dataT>* BST<keyT, dataT>::ArrToBST(Map* map, int size, int oldSize)
+BST<keyT, dataT> BST<keyT, dataT>::ArrToBST(Map* map, int size, int oldSize)
 {
-    BST<keyT, dataT> *mergedBST = BST<keyT, dataT>::BuildEmptyTree(size);
+    BST<keyT, dataT> mergedBST = BST<keyT, dataT>::BuildEmptyTree(size);
     int i = 0;
-    BST<keyT, dataT>::InsertElements(mergedBST->root, (std::shared_ptr<keyT> *)(map->key), (std::shared_ptr<dataT> *)(map->data), oldSize, &i);
+    BST<keyT, dataT>::InsertElements(mergedBST.root, (std::shared_ptr<keyT> *)(map->key), (std::shared_ptr<dataT> *)(map->data), oldSize, &i);
+    delete[] (std::shared_ptr<keyT> *)(map->key);
+    delete[] (std::shared_ptr<dataT> *)(map->data);
     return mergedBST;   
 }
 
@@ -395,13 +401,13 @@ void BST<keyT, dataT>::InsertElements(std::shared_ptr<Node<keyT, dataT>> root, s
 }
 
 template <class keyT, class dataT>
-BST<keyT, dataT>* BST<keyT, dataT>::BuildEmptyTree(int n)
+BST<keyT, dataT> BST<keyT, dataT>::BuildEmptyTree(int n)
 {
     int completeHeight = BST<keyT, dataT>::FindHeightOfComplete(n + 1);
     int completeSize = BST<keyT, dataT>::ComputeSizeOfComplete(completeHeight);
-    BST<keyT, dataT> *res = new BST<keyT, dataT>(BST<keyT, dataT>::BuildCompleteTree(completeHeight), completeSize);
-    removeRightLeafs(res->root, completeSize - n, completeHeight, 0);
-    res->size -= completeSize - n;
+    BST<keyT, dataT> res = BST<keyT, dataT>(BST<keyT, dataT>::BuildCompleteTree(completeHeight), completeSize);
+    removeRightLeafs(res.root, completeSize - n, completeHeight, 0);
+    res.size -= completeSize - n;
     return res;
 }
 
