@@ -65,13 +65,13 @@ PMStatusType PlayersManager::AddPlayer(const int playerId, const int groupId, co
             groupPtr = this->groupsTree.Get(groupId);
         newPlayer->groupPtr = groupPtr;
         
-        this->allPlayersTree.Insert(playerId, *newPlayer);
+        this->allPlayersTree.Insert(playerId, newPlayer);
 
         PlayersManager::UpdateMaxLevel(this->maxLevel, level, playerId);
 
-        PlayersManager::AddPlayerGroupsTree(*groupPtr, playerId, *newPlayer);
+        PlayersManager::AddPlayerGroupsTree(*groupPtr, playerId, newPlayer);
 
-        PlayersManager::AddPlayerAllLevelsTree(this->allLevelsTree, playerId, *newPlayer);
+        PlayersManager::AddPlayerAllLevelsTree(this->allLevelsTree, playerId, newPlayer);
 
         this->nonEmptyGroupsTree.Insert(groupId, groupPtr);
 
@@ -164,7 +164,6 @@ PMStatusType PlayersManager::ReplaceGroup(const int groupId, const int replaceme
         PlayersManager::UpdateMaxLevel(replacement->maxLevel, group->maxLevel.level,  group->maxLevel.playerId);
         this->nonEmptyGroupsTree.Remove(groupId);
         this->groupsTree.Remove(groupId);
-        group.reset(); // delete allocation
         MapDestroy(map);
         
 

@@ -9,7 +9,7 @@
             "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+            "program": "${fileDirname}/main1.exe",
             "args": ["<", "test.in.txt"],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
