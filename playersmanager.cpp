@@ -1,5 +1,6 @@
 #include "playersmanager.h"
 #include <exception>
+#include <assert.h>
 
 
 PMStatusType PlayersManager::AddGroup(const int groupId)
@@ -101,8 +102,11 @@ void PlayersManager::RemovePlayerallLevelsTree(BST<int, Level>& allLevelsTree, c
 {
     std::shared_ptr<Level> level = allLevelsTree.Get(playerToRemove.level);
     level->playersTree.Remove(playerToRemove.playerId);
-    if (level->playersTree.size == 0)
+    if (level->playersTree.size == 0) {
         allLevelsTree.Remove(level->levelId);// delete allocation
+        assert(allLevelsTree.Find(level->levelId) == false);
+    }
+
 }
 
 void PlayersManager::SearchAndUpdateMaxLevel(BST<int, Level>& levelsTree, MaxLevel& maxlevel)
@@ -165,7 +169,7 @@ PMStatusType PlayersManager::ReplaceGroup(const int groupId, const int replaceme
         BST<int, Level> merged = BST<int, Level>::ArrToBST(map, newSize, group->levelsTree.size + replacement->levelsTree.size);
         PlayersManager::UpdateLevels(merged.root, replacement, replacementId);
         replacement->numOfPlayers += group->numOfPlayers;
-        replacement->levelsTree.root = std::make_shared<Node<int,Level>>(*(merged.root));
+        replacement->levelsTree.root = merged.root;
         replacement->levelsTree.size = merged.size;
         PlayersManager::UpdateMaxLevel(replacement->maxLevel, group->maxLevel.level,  group->maxLevel.playerId);
         this->nonEmptyGroupsTree.Remove(groupId);
