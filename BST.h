@@ -17,7 +17,6 @@ class BST {
         static std::shared_ptr<Node<keyT, dataT>> RLRotation(std::shared_ptr<Node<keyT, dataT>>& root);
         static std::shared_ptr<Node<keyT, dataT>> RRRotation(std::shared_ptr<Node<keyT, dataT>>& root);
         static std::shared_ptr<Node<keyT, dataT>> RemoveAux(std::shared_ptr<Node<keyT, dataT>>& root, const keyT& key);
-        static std::shared_ptr<Node<keyT, dataT>> RemoveAlgo(std::shared_ptr<Node<keyT, dataT>>& root);
         static std::shared_ptr<Node<keyT, dataT>> FindNextInOrder(std::shared_ptr<Node<keyT, dataT>> root);
         static void SaveInOrder(const std::shared_ptr<Node<keyT, dataT>> root, std::shared_ptr<keyT> *keyArr, std::shared_ptr<dataT> *dataArr, int *i);
         static void MergeArr(std::shared_ptr<keyT> *keyArr1, std::shared_ptr<keyT> *keyArr2, std::shared_ptr<dataT> *dataArr1,
@@ -233,14 +232,31 @@ std::shared_ptr<Node<keyT, dataT>> BST<keyT, dataT>::RemoveAux(std::shared_ptr<N
 {
     if (root == nullptr)
         return nullptr;
-
-    if (root->key == key) 
-        return BST<keyT, dataT>::RemoveAlgo(root);
     
     if (root->key < key)
         root->right = BST<keyT, dataT>::RemoveAux(root->right, key);
-    else
+    else if (root->key > key)
         root->left = BST<keyT, dataT>::RemoveAux(root->left, key);
+    
+    else {
+        if (!root->left && !root->right)
+            root = nullptr;
+        
+        else if (root->left && root->right) {
+            std::shared_ptr<Node<keyT, dataT>> leaf = BST<keyT, dataT>::FindNextInOrder(root);
+            root->key = leaf->key;
+            root->data = leaf->data;
+            root->right = BST<keyT, dataT>::RemoveAux(root->right, leaf->key);
+        }
+
+        else if (root->left)
+            root = root->left;
+        else
+            root = root->right;   
+    }
+    
+    if (root == nullptr)
+        return nullptr;
     
     root->height = std::max(GetHeight(root->left), GetHeight(root->right)) + 1;
     int balanceFactor = GetBF(root);
@@ -258,28 +274,6 @@ std::shared_ptr<Node<keyT, dataT>> BST<keyT, dataT>::RemoveAux(std::shared_ptr<N
             return BST<keyT, dataT>::RLRotation(root);
     }  
     return root;
-}
-
-template <class keyT, class dataT>
-std::shared_ptr<Node<keyT, dataT>> BST<keyT, dataT>::RemoveAlgo(std::shared_ptr<Node<keyT, dataT>>& root)
-{
-    if (!root->left && !root->right)
-        return nullptr;
-    
-    if (root->left && root->right) {
-        std::shared_ptr<Node<keyT, dataT>> leaf = BST<keyT, dataT>::FindNextInOrder(root);
-        Node<keyT, dataT> oldRoot = *root;
-        root->key = leaf->key;
-        root->data = leaf->data;
-        leaf->key = oldRoot.key;
-        leaf->data = oldRoot.data;
-        root->right = BST<keyT, dataT>::RemoveAux(root->right, leaf->key);
-        return root;
-    }
-    if(root->left)
-        return root->left;
-   
-    return root->right; 
 }
 
 template <class keyT, class dataT>
