@@ -1,6 +1,5 @@
 #include "playersmanager.h"
 #include <exception>
-#include <assert.h>
 
 
 PMStatusType PlayersManager::AddGroup(const int groupId)
@@ -83,6 +82,7 @@ PMStatusType PlayersManager::AddPlayer(const int playerId, const int groupId, co
     return PM_SUCCESS;
 }
 
+
 void PlayersManager::RemovePlayerGroupsTree(Group& group, const Player& playerToRemove)
 {
     std::shared_ptr<Level> playerLevel = group.levelsTree.Get(playerToRemove.level);
@@ -104,7 +104,6 @@ void PlayersManager::RemovePlayerallLevelsTree(BST<int, Level>& allLevelsTree, c
     level->playersTree.Remove(playerToRemove.playerId);
     if (level->playersTree.size == 0) {
         allLevelsTree.Remove(level->levelId);// delete allocation
-        assert(allLevelsTree.Find(level->levelId) == false);
     }
 
 }
@@ -119,7 +118,8 @@ void PlayersManager::SearchAndUpdateMaxLevel(BST<int, Level>& levelsTree, MaxLev
         Level maxLevel = levelsTree.GetMax();
         int newMaxLevel = maxLevel.levelId;
         int newMaxPlayerId = maxLevel.playersTree.GetMin().playerId;
-        PlayersManager::UpdateMaxLevel(maxlevel, newMaxLevel, newMaxPlayerId);
+        maxlevel.level = newMaxLevel;
+        maxlevel.playerId = newMaxPlayerId;
     }
 }
 
@@ -163,19 +163,21 @@ PMStatusType PlayersManager::ReplaceGroup(const int groupId, const int replaceme
             this->groupsTree.Remove(groupId);
             return PM_SUCCESS;
         }
-    
         map = BST<int, Level>::MergeToArr(group->levelsTree, replacement->levelsTree);
         int newSize = PlayersManager::RemoveDuplicates(map, group->levelsTree.size + replacement->levelsTree.size);
         BST<int, Level> merged = BST<int, Level>::ArrToBST(map, newSize, group->levelsTree.size + replacement->levelsTree.size);
         PlayersManager::UpdateLevels(merged.root, replacement, replacementId);
+
         replacement->numOfPlayers += group->numOfPlayers;
         replacement->levelsTree.root = merged.root;
         replacement->levelsTree.size = merged.size;
         PlayersManager::UpdateMaxLevel(replacement->maxLevel, group->maxLevel.level,  group->maxLevel.playerId);
+
+        this->nonEmptyGroupsTree.Insert(replacementId, replacement);
         this->nonEmptyGroupsTree.Remove(groupId);
         this->groupsTree.Remove(groupId);
         MapDestroy(map);
-        
+
 
     } catch(std::bad_alloc& err) {
         MapDestroy(map);
@@ -193,6 +195,7 @@ void PlayersManager::UpdateLevels(std::shared_ptr<Node<int, Level>> root, std::s
     PlayersManager::UpdateLevels(root->right, replacement, replacementId);
 
 }
+
 void PlayersManager::UpdatePlayers(std::shared_ptr<Node<int, Player>> root, std::shared_ptr<Group> replacement, int replacementId)
 {
      if(root == nullptr)
@@ -239,6 +242,7 @@ PMStatusType PlayersManager::IncreaseLevel(const int playerId, const int levelIn
     if (insertRes == PM_ALLOCATION_ERROR)   
         return PM_ALLOCATION_ERROR;
     
+    
     return PM_SUCCESS;
 }
 
@@ -260,19 +264,22 @@ PMStatusType PlayersManager::GetHighestLevel(const int groupId, int* playerId)
     return PM_SUCCESS;
 }
 
-void PlayersManager::InOrderByLevel(std::shared_ptr<Node<int, Level>> level, int **players, int *numOfPlayers, int i)
+void PlayersManager::InOrderByLevel(std::shared_ptr<Node<int, Level>> level, int **players, int *numOfPlayers, int *i)
 {
     if (level == nullptr)
         return;
 
     PlayersManager::InOrderByLevel(level->left, players, numOfPlayers, i);
-    PlayersManager::InOrderByPlayer(level->data->playersTree.root, *players, i);
     
-    int left = i;
-    int right = i + level->data->playersTree.size - 1;
+    int j = *i;
+    PlayersManager::InOrderByPlayer(level->data->playersTree.root, *players, &j);
+    int left = *i;
+    int right = *i + level->data->playersTree.size - 1;
+    
     PlayersManager::Reverse(players, left, right);
-    
-    PlayersManager::InOrderByLevel(level->right, players, numOfPlayers, right + 1);
+
+    (*i) = right + 1;
+    PlayersManager::InOrderByLevel(level->right, players, numOfPlayers, i);
     return;
 }
 
@@ -286,22 +293,22 @@ void PlayersManager::Reverse(int **players, int left, int right)
         left++;
     }
 }
-void PlayersManager::InOrderByPlayer(std::shared_ptr<Node<int, Player>> player, int *players, int i)
+void PlayersManager::InOrderByPlayer(std::shared_ptr<Node<int, Player>> player, int *players, int *i)
 {
     if (player == nullptr)
         return;
 
     PlayersManager::InOrderByPlayer(player->left, players, i);
-    players[i] = player->data->playerId;
-    PlayersManager::InOrderByPlayer(player->right, players, i + 1);
+    players[*i] = player->data->playerId;
+    (*i)++;
+    PlayersManager::InOrderByPlayer(player->right, players, i);
     return;
 }
 
 void PlayersManager::GetAllPlayersByLevelAux(BST<int, Level>& levelsTree, int **players, int *numOfPlayers)
 {
-    
-    *players = (int *)malloc(sizeof(int) * (*numOfPlayers));
-    PlayersManager::InOrderByLevel(levelsTree.root, players, numOfPlayers, 0);
+    int i = 0;
+    PlayersManager::InOrderByLevel(levelsTree.root, players, numOfPlayers, &i);
 }
 
 PMStatusType PlayersManager::GetAllPlayersByLevel(const int groupId, int **players, int *numOfPlayers)
@@ -312,7 +319,11 @@ PMStatusType PlayersManager::GetAllPlayersByLevel(const int groupId, int **playe
     if (groupId < 0) {
         try { 
             *numOfPlayers = this->allPlayersTree.size;
+            *players = (int *)malloc(sizeof(int) * (*numOfPlayers));
+            if (*players == nullptr)
+                 return PM_ALLOCATION_ERROR;
             PlayersManager::GetAllPlayersByLevelAux(this->allLevelsTree, players, numOfPlayers);
+            PlayersManager::Reverse(players, 0, this->allPlayersTree.size - 1);
         } catch (std::bad_alloc& error) {
             return PM_ALLOCATION_ERROR;
         }
@@ -324,24 +335,30 @@ PMStatusType PlayersManager::GetAllPlayersByLevel(const int groupId, int **playe
         return PM_FAILURE;
 
     try { 
-        *numOfPlayers = group->levelsTree.size;
+        *numOfPlayers = group->numOfPlayers;
+        *players = (int *)malloc(sizeof(int) * (*numOfPlayers));
+        if (*players == nullptr)
+            return PM_ALLOCATION_ERROR;
         PlayersManager::GetAllPlayersByLevelAux(group->levelsTree, players, numOfPlayers);
+        PlayersManager::Reverse(players, 0, group->numOfPlayers - 1);
     } catch (std::bad_alloc& error) {
         return PM_ALLOCATION_ERROR;
     }
     return PM_SUCCESS; 
 }
 
-void PlayersManager::InOrderNElements(std::shared_ptr<Node<int, Group>> root, int numOfGroups, int *players)
+void PlayersManager::InOrderNElements(std::shared_ptr<Node<int, Group>> root, int numOfGroups, int *players, int *i)
 {
     if (root == nullptr)
         return;
-    if (numOfGroups == 0)
-        return;
 
-    PlayersManager::InOrderNElements(root->left, numOfGroups, players);
-    *players = root->data->maxLevel.playerId;
-    PlayersManager::InOrderNElements(root->right, numOfGroups - 1, players + 1);
+    PlayersManager::InOrderNElements(root->left, numOfGroups, players, i);
+
+    if (numOfGroups == *i)
+        return;
+    players[*i] = root->data->maxLevel.playerId;
+    (*i)++;
+    PlayersManager::InOrderNElements(root->right, numOfGroups, players, i);
 
     return;
 }
@@ -355,10 +372,14 @@ PMStatusType PlayersManager::GetGroupsHighestLevel(int numOfGroups, int **player
         return PM_FAILURE;
 
     try {
-        *players = (int *)malloc(sizeof(int) * numOfGroups); 
-        PlayersManager::InOrderNElements(this->nonEmptyGroupsTree.root, numOfGroups, *players);
+        *players = (int *)malloc(sizeof(int) * (numOfGroups)); 
+        if (*players == nullptr)
+            return PM_ALLOCATION_ERROR;
+        int i = 0;
+        PlayersManager::InOrderNElements(this->nonEmptyGroupsTree.root, numOfGroups, *players, &i);
     } catch (std::bad_alloc& error) {
         return PM_ALLOCATION_ERROR;
     }
     return PM_SUCCESS; 
 }
+

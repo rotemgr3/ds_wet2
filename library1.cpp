@@ -13,42 +13,50 @@ void* Init()
 
 StatusType AddGroup(void *DS, int GroupID)
 {
-    return (StatusType)((PlayersManager *)DS)->AddGroup(GroupID);
+    StatusType res = (StatusType)((PlayersManager *)DS)->AddGroup(GroupID);
+    return res;
 }
 
 StatusType AddPlayer(void *DS, int PlayerID, int GroupID, int Level)
 {
-    return (StatusType)((PlayersManager *)DS)->AddPlayer(PlayerID, GroupID, Level);   
+    StatusType res = (StatusType)((PlayersManager *)DS)->AddPlayer(PlayerID, GroupID, Level); 
+    return res;
 }
 
 StatusType RemovePlayer(void *DS, int PlayerID)
 {
-    return (StatusType)((PlayersManager *)DS)->RemovePlayer(PlayerID);   
+    StatusType res = (StatusType)((PlayersManager *)DS)->RemovePlayer(PlayerID); 
+    return res;
 }
 
 StatusType ReplaceGroup(void *DS, int GroupID, int ReplacementID)
 {
-    return (StatusType)((PlayersManager *)DS)->ReplaceGroup(GroupID, ReplacementID);
+    StatusType res = (StatusType)((PlayersManager *)DS)->ReplaceGroup(GroupID, ReplacementID);
+    return res;
 }
 
 StatusType IncreaseLevel(void *DS, int PlayerID, int LevelIncrease)
 {
-    return (StatusType)((PlayersManager *)DS)->IncreaseLevel(PlayerID, LevelIncrease);   
+    StatusType res = (StatusType)((PlayersManager *)DS)->IncreaseLevel(PlayerID, LevelIncrease);
+    return res; 
 }
 
 StatusType GetHighestLevel(void *DS, int GroupID, int *PlayerID)
 {
-    return (StatusType)((PlayersManager *)DS)->GetHighestLevel(GroupID, PlayerID);
+    StatusType res = (StatusType)((PlayersManager *)DS)->GetHighestLevel(GroupID, PlayerID);
+    return res;
 }
 
 StatusType GetAllPlayersByLevel(void *DS, int GroupID, int **Players, int *numOfPlayers)
 {
-    return (StatusType)((PlayersManager *)DS)->GetAllPlayersByLevel(GroupID, Players, numOfPlayers);   
+    StatusType res = (StatusType)((PlayersManager *)DS)->GetAllPlayersByLevel(GroupID, Players, numOfPlayers);
+    return res;  
 }
 
 StatusType GetGroupsHighestLevel(void *DS, int numOfGroups, int **Players)
 {
-    return (StatusType)((PlayersManager *)DS)->GetGroupsHighestLevel(numOfGroups, Players);
+    StatusType res = (StatusType)((PlayersManager *)DS)->GetGroupsHighestLevel(numOfGroups, Players);
+    return res;
 }
 
 void Quit(void** DS)

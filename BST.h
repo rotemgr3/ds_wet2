@@ -5,7 +5,6 @@
 #include "node.h"
 #include "map.h"
 
-
 template <class keyT, class dataT>
 class BST {
     private:
@@ -27,11 +26,10 @@ class BST {
         static void InsertElements(std::shared_ptr<Node<keyT, dataT>> root, std::shared_ptr<keyT> *keyArr,
                                    std::shared_ptr<dataT> *dataArr, int size, int *i);
         static BST<keyT, dataT> BuildEmptyTree(int n);
-        static void removeRightLeafs(std::shared_ptr<Node<keyT, dataT>> root, int removecount, int leafPathLen, int currPathLen);
+        static void removeRightLeafs(std::shared_ptr<Node<keyT, dataT>> root, int *removecount, int leafPathLen, int currPathLen);
         static int FindHeightOfComplete(int num);
         static std::shared_ptr<Node<keyT, dataT>> BuildCompleteTree(int h);
         static int ComputeSizeOfComplete(int height);
-        static std::shared_ptr<Node<keyT, dataT>> DeleteInOrder(std::shared_ptr<Node<keyT, dataT>> root);
 
     public:
         std::shared_ptr<Node<keyT, dataT>> root;
@@ -49,7 +47,7 @@ class BST {
         dataT& GetMin();
         static Map* MergeToArr(const BST<keyT, dataT>& tree1, const BST<keyT, dataT>& tree2);
         static BST<keyT, dataT> ArrToBST(Map* map, int size, int oldSize);  
-        BST<keyT, dataT>& operator=(const BST<keyT, dataT>& copy);     
+        BST<keyT, dataT>& operator=(const BST<keyT, dataT>& copy);   
 };
 
 template <class keyT, class dataT>
@@ -87,12 +85,12 @@ bool BST<keyT, dataT>::Find(const keyT& target)
 }
 
 template <class keyT, class dataT>
-void BST<keyT, dataT>::Insert(const keyT key, std::shared_ptr<dataT>& dataPtr)//removed const from dataT
+void BST<keyT, dataT>::Insert(const keyT key, std::shared_ptr<dataT>& dataPtr)
 {
     if(this->Find(key))
-        return;//handle it later
+        return;
     
-    std::shared_ptr<dataT> copyData = std::shared_ptr<dataT>(dataPtr); //changed from new dataT(data)
+    std::shared_ptr<dataT> copyData = std::shared_ptr<dataT>(dataPtr); 
     auto toInsert = std::shared_ptr<Node<keyT, dataT>>(new Node<keyT, dataT>(key,copyData));
 
     this->root = BST<keyT, dataT>::InsertAux(this->root, toInsert);
@@ -224,7 +222,7 @@ template <class keyT, class dataT>
 void BST<keyT, dataT>::Remove(const keyT& key)
 {
     if(!this->Find(key))
-        return;//handle it later
+        return;
     
     this->root = BST<keyT, dataT>::RemoveAux(this->root, key);
     this->size--;
@@ -359,6 +357,8 @@ BST<keyT, dataT> BST<keyT, dataT>::Merge(const BST<keyT, dataT>& tree1, const BS
     BST<keyT, dataT> mergedBST = BST<keyT, dataT>::BuildEmptyTree(tree1.size + tree2.size);
     int i = 0;
     BST<keyT, dataT>::InsertElements(mergedBST.root, (std::shared_ptr<keyT> *)(map->key), (std::shared_ptr<dataT> *)(map->data), tree1.size + tree2.size, &i);
+    delete[] (std::shared_ptr<keyT> *)(map->key);
+    delete[] (std::shared_ptr<dataT> *)(map->data);
     MapDestroy(map);
     return mergedBST;   
 }
@@ -393,6 +393,7 @@ BST<keyT, dataT> BST<keyT, dataT>::ArrToBST(Map* map, int size, int oldSize)
     BST<keyT, dataT>::InsertElements(mergedBST.root, (std::shared_ptr<keyT> *)(map->key), (std::shared_ptr<dataT> *)(map->data), oldSize, &i);
     delete[] (std::shared_ptr<keyT> *)(map->key);
     delete[] (std::shared_ptr<dataT> *)(map->data);
+
     return mergedBST;   
 }
 
@@ -423,26 +424,28 @@ BST<keyT, dataT> BST<keyT, dataT>::BuildEmptyTree(int n)
     int completeHeight = BST<keyT, dataT>::FindHeightOfComplete(n + 1);
     int completeSize = BST<keyT, dataT>::ComputeSizeOfComplete(completeHeight);
     BST<keyT, dataT> res = BST<keyT, dataT>(BST<keyT, dataT>::BuildCompleteTree(completeHeight), completeSize);
-    removeRightLeafs(res.root, completeSize - n, completeHeight, 0);
+    int removeCount = completeSize - n;
+    removeRightLeafs(res.root, &removeCount, completeHeight, 0);
+
     res.size = n;
     return res;
 }
 
 template <class keyT, class dataT>
-void BST<keyT, dataT>::removeRightLeafs(std::shared_ptr<Node<keyT, dataT>> root, int removecount, int leafPathLen, int currPathLen)
+void BST<keyT, dataT>::removeRightLeafs(std::shared_ptr<Node<keyT, dataT>> root, int* removecount, int leafPathLen, int currPathLen)
 {
-    if(root == nullptr || removecount == 0)
+    if(root == nullptr || *removecount == 0)
         return;
 
     BST<keyT, dataT>::removeRightLeafs(root->right, removecount, leafPathLen, currPathLen + 1);
 
     if (currPathLen + 1 == leafPathLen) {
         root->right = nullptr;
-        removecount--;
+        (*removecount)--;
     }
-    if (currPathLen + 1 == leafPathLen && removecount > 0) {
+    if (currPathLen + 1 == leafPathLen && *removecount > 0) {
         root->left = nullptr;
-        removecount--;
+        (*removecount)--;
         root->height--;
     }
 
@@ -508,20 +511,5 @@ dataT& BST<keyT, dataT>::GetMin()
 
     return *(curr->data);
 }
-/*template <class keyT, class dataT>
-BST<keyT, dataT>::~BST()
-{
-    this->root = DeleteInOrder(this->root);
-    this->size = 0;
-}
 
-template <class keyT, class dataT>
-std::shared_ptr<Node<keyT, dataT>> BST<keyT, dataT>::DeleteInOrder(std::shared_ptr<Node<keyT, dataT>> root)
-{
-    if(root == nullptr)
-        return nullptr;
-    root->left = DeleteInOrder(root->left);
-    root->right = DeleteInOrder(root->right);
-    return nullptr;
-}*/
 #endif /* BST_H */

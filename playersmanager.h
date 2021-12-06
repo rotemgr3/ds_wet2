@@ -27,16 +27,15 @@ class PlayersManager {
                                                                    const int groupId, const int numOfPlayers);
         static void RemovePlayerallLevelsTree(BST<int, Level>& allLevelsTree, const Player& playerToRemove);
         static void SearchAndUpdateMaxLevel(BST<int, Level>& levelsTree, MaxLevel& maxlevel);
-        static void InOrderByPlayer(std::shared_ptr<Node<int, Player>> player, int *players, int i);
-        static void InOrderByLevel(std::shared_ptr<Node<int, Level>> level, int **players, int *numOfPlayers, int i);
+        static void InOrderByPlayer(std::shared_ptr<Node<int, Player>> player, int *players, int *i);
+        static void InOrderByLevel(std::shared_ptr<Node<int, Level>> level, int **players, int *numOfPlayers, int *i);
         static void Reverse(int **players, int left, int right);
         static void GetAllPlayersByLevelAux(BST<int, Level>& levelsTree, int **players, int *numOfPlayers);
-        static void InOrderNElements(std::shared_ptr<Node<int, Group>> root, int numOfGroups, int *players);
+        static void InOrderNElements(std::shared_ptr<Node<int, Group>> root, int numOfGroups, int *players, int *i);
         static int RemoveDuplicates(Map *map, int n);
         static void UpdateLevels(std::shared_ptr<Node<int, Level>> tree, std::shared_ptr<Group> replacement, int replacementId);
         static void UpdatePlayers(std::shared_ptr<Node<int, Player>> tree, std::shared_ptr<Group> replacement, int replacementId);
-
-
+        
     public:
         BST<int, Group> groupsTree;
         BST<int, Group> nonEmptyGroupsTree;
@@ -53,7 +52,6 @@ class PlayersManager {
         PMStatusType GetHighestLevel(const int groupId, int *playerId);
         PMStatusType GetAllPlayersByLevel(const int groupId, int **players, int *numOfPlayers);
         PMStatusType GetGroupsHighestLevel(int numOfGroups, int **players);
-        
 };
 
 #endif /* PLAYERS_MANAGER_H_ */
