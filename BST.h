@@ -29,6 +29,7 @@ class BST {
         static int FindHeightOfComplete(int num);
         static std::shared_ptr<Node<keyT, dataT>> BuildCompleteTree(int h);
         static int ComputeSizeOfComplete(int height);
+        static int IntMax(int a, int b);
 
     public:
         std::shared_ptr<Node<keyT, dataT>> root;
@@ -48,6 +49,12 @@ class BST {
         static BST<keyT, dataT> ArrToBST(Map* map, int size, int oldSize);  
         BST<keyT, dataT>& operator=(const BST<keyT, dataT>& copy);   
 };
+
+template <class keyT, class dataT>
+int BST<keyT, dataT>::IntMax(int a, int b)
+{
+    return a > b ? a : b;
+}
 
 template <class keyT, class dataT>
 BST<keyT, dataT>& BST<keyT, dataT>::operator=(const BST<keyT, dataT>& copy)
@@ -121,8 +128,8 @@ std::shared_ptr<Node<keyT, dataT>> BST<keyT, dataT>::LLRotation(std::shared_ptr<
     B->left = AR;
     A->right = B;
     
-    B->height = std::max(GetHeight(B->left), GetHeight(B->right)) + 1;
-    A->height = std::max(GetHeight(A->left), GetHeight(A->right)) + 1;   
+    B->height = IntMax(GetHeight(B->left), GetHeight(B->right)) + 1;
+    A->height = IntMax(GetHeight(A->left), GetHeight(A->right)) + 1;   
      
     return A;
 }
@@ -141,9 +148,9 @@ std::shared_ptr<Node<keyT, dataT>> BST<keyT, dataT>::LRRotation(std::shared_ptr<
     B->left = A;
     B->right = C;
 
-    A->height = std::max(GetHeight(A->left), GetHeight(A->right)) + 1;
-    C->height = std::max(GetHeight(C->left), GetHeight(C->right)) + 1;
-    B->height = std::max(GetHeight(B->left), GetHeight(B->right)) + 1;
+    A->height = IntMax(GetHeight(A->left), GetHeight(A->right)) + 1;
+    C->height = IntMax(GetHeight(C->left), GetHeight(C->right)) + 1;
+    B->height = IntMax(GetHeight(B->left), GetHeight(B->right)) + 1;
     
     return B;
 }
@@ -162,9 +169,9 @@ std::shared_ptr<Node<keyT, dataT>> BST<keyT, dataT>::RLRotation(std::shared_ptr<
     B->right = A;
     B->left = C;
 
-    A->height = std::max(GetHeight(A->left), GetHeight(A->right)) + 1;
-    C->height = std::max(GetHeight(C->left), GetHeight(C->right)) + 1;
-    B->height = std::max(GetHeight(B->left), GetHeight(B->right)) + 1;
+    A->height = IntMax(GetHeight(A->left), GetHeight(A->right)) + 1;
+    C->height = IntMax(GetHeight(C->left), GetHeight(C->right)) + 1;
+    B->height = IntMax(GetHeight(B->left), GetHeight(B->right)) + 1;
 
     return B;
 }
@@ -180,8 +187,8 @@ std::shared_ptr<Node<keyT, dataT>> BST<keyT, dataT>::RRRotation(std::shared_ptr<
     B->right = AL;
     A->left = B;
     
-    B->height = std::max(GetHeight(B->left), GetHeight(B->right)) + 1;
-    A->height = std::max(GetHeight(A->left), GetHeight(A->right)) + 1;
+    B->height = IntMax(GetHeight(B->left), GetHeight(B->right)) + 1;
+    A->height = IntMax(GetHeight(A->left), GetHeight(A->right)) + 1;
     
     return A;
 }
@@ -199,7 +206,7 @@ std::shared_ptr<Node<keyT, dataT>> BST<keyT, dataT>::InsertAux(std::shared_ptr<N
     else
         root->left = BST<keyT, dataT>::InsertAux(root->left, toInsert);
     
-    root->height = std::max(GetHeight(root->left), GetHeight(root->right)) + 1;
+    root->height = IntMax(GetHeight(root->left), GetHeight(root->right)) + 1;
     int balanceFactor = GetBF(root);
 
     if (balanceFactor == 2) {
@@ -258,7 +265,7 @@ std::shared_ptr<Node<keyT, dataT>> BST<keyT, dataT>::RemoveAux(std::shared_ptr<N
     if (root == nullptr)
         return nullptr;
     
-    root->height = std::max(GetHeight(root->left), GetHeight(root->right)) + 1;
+    root->height = IntMax(GetHeight(root->left), GetHeight(root->right)) + 1;
     int balanceFactor = GetBF(root);
 
     if (balanceFactor == 2) {
