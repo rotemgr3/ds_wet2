@@ -29,7 +29,6 @@ class PlayersManager {
         static void SearchAndUpdateMaxLevel(BST<int, Level>& levelsTree, MaxLevel& maxlevel);
         static void InOrderByPlayer(std::shared_ptr<Node<int, Player>> player, int *players, int *i);
         static void InOrderByLevel(std::shared_ptr<Node<int, Level>> level, int **players, int *numOfPlayers, int *i);
-        static void Reverse(int **players, int left, int right);
         static void GetAllPlayersByLevelAux(BST<int, Level>& levelsTree, int **players, int *numOfPlayers);
         static void InOrderNElements(std::shared_ptr<Node<int, Group>> root, int numOfGroups, int *players, int *i);
         static int RemoveDuplicates(Map *map, int n);
