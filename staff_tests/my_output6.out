@@ -1,0 +1,2912 @@
+Init done.
+RemovePlayer: FAILURE
+AddGroup: SUCCESS
+ReplaceGroup: FAILURE
+AddPlayer: SUCCESS
+ReplaceGroup: FAILURE
+AddGroup: SUCCESS
+RemovePlayer: FAILURE
+AddPlayer: SUCCESS
+AddPlayer: SUCCESS
+AddGroup: SUCCESS
+Rank	||	Player
+1	||	2
+2	||	30
+3	||	37
+and there are no more players!
+Rank	||	Player
+1	||	2
+2	||	30
+3	||	37
+and there are no more players!
+ReplaceGroup: FAILURE
+AddPlayer: SUCCESS
+IncreaseLevel: SUCCESS
+AddGroup: SUCCESS
+RemovePlayer: FAILURE
+ReplaceGroup: INVALID_INPUT
+IncreaseLevel: INVALID_INPUT
+ReplaceGroup: FAILURE
+Highest level player is: 2
+Rank	||	Player
+1	||	2
+2	||	30
+3	||	37
+and there are no more players!
+Highest level player is: 2
+IncreaseLevel: SUCCESS
+RemovePlayer: FAILURE
+AddPlayer: SUCCESS
+Rank	||	Player
+1	||	2
+2	||	24
+3	||	30
+4	||	27
+5	||	37
+and there are no more players!
+ReplaceGroup: FAILURE
+ReplaceGroup: FAILURE
+RemovePlayer: FAILURE
+Highest level player is: -1
+AddPlayer: SUCCESS
+Highest level player is: -1
+and there are no more players!
+AddPlayer: SUCCESS
+ReplaceGroup: FAILURE
+AddGroup: SUCCESS
+AddPlayer: SUCCESS
+RemovePlayer: FAILURE
+ReplaceGroup: FAILURE
+IncreaseLevel: SUCCESS
+ReplaceGroup: FAILURE
+AddPlayer: FAILURE
+ReplaceGroup: INVALID_INPUT
+RemovePlayer: SUCCESS
+AddPlayer: SUCCESS
+IncreaseLevel: SUCCESS
+Rank	||	Player
+1	||	2
+2	||	35
+3	||	27
+4	||	30
+5	||	8
+6	||	33
+7	||	31
+8	||	37
+and there are no more players!
+and there are no more players!
+AddGroup: SUCCESS
+Highest level player is: -1
+ReplaceGroup: SUCCESS
+IncreaseLevel: SUCCESS
+ReplaceGroup: FAILURE
+RemovePlayer: FAILURE
+RemovePlayer: SUCCESS
+RemovePlayer: SUCCESS
+ReplaceGroup: INVALID_INPUT
+RemovePlayer: FAILURE
+ReplaceGroup: FAILURE
+AddGroup: SUCCESS
+AddPlayer: SUCCESS
+AddPlayer: SUCCESS
+AddPlayer: SUCCESS
+AddGroup: FAILURE
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+Highest level player is: 2
+ReplaceGroup: FAILURE
+IncreaseLevel: INVALID_INPUT
+AddGroup: SUCCESS
+ReplaceGroup: SUCCESS
+Highest level player is: 2
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+RemovePlayer: SUCCESS
+IncreaseLevel: SUCCESS
+ReplaceGroup: FAILURE
+IncreaseLevel: SUCCESS
+ReplaceGroup: FAILURE
+AddPlayer: SUCCESS
+AddGroup: SUCCESS
+IncreaseLevel: SUCCESS
+Rank	||	Player
+1	||	2
+2	||	35
+3	||	27
+4	||	31
+5	||	8
+6	||	19
+7	||	20
+8	||	45
+9	||	37
+and there are no more players!
+IncreaseLevel: SUCCESS
+AddPlayer: SUCCESS
+RemovePlayer: FAILURE
+RemovePlayer: SUCCESS
+ReplaceGroup: INVALID_INPUT
+AddPlayer: SUCCESS
+Rank	||	Player
+1	||	19
+and there are no more players!
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+RemovePlayer: SUCCESS
+AddPlayer: SUCCESS
+IncreaseLevel: SUCCESS
+RemovePlayer: SUCCESS
+IncreaseLevel: SUCCESS
+AddPlayer: SUCCESS
+ReplaceGroup: FAILURE
+ReplaceGroup: FAILURE
+Rank	||	Player
+1	||	9
+2	||	19
+and there are no more players!
+AddPlayer: SUCCESS
+ReplaceGroup: INVALID_INPUT
+AddPlayer: SUCCESS
+and there are no more players!
+AddPlayer: FAILURE
+IncreaseLevel: SUCCESS
+Highest level player is: -1
+Rank	||	Player
+1	||	35
+2	||	3
+3	||	20
+4	||	27
+5	||	43
+6	||	32
+7	||	9
+8	||	13
+9	||	8
+10	||	19
+11	||	30
+12	||	37
+and there are no more players!
+ReplaceGroup: FAILURE
+AddPlayer: SUCCESS
+ReplaceGroup: SUCCESS
+RemovePlayer: SUCCESS
+AddGroup: SUCCESS
+ReplaceGroup: FAILURE
+ReplaceGroup: FAILURE
+AddPlayer: FAILURE
+AddPlayer: SUCCESS
+AddPlayer: FAILURE
+AddGroup: SUCCESS
+IncreaseLevel: SUCCESS
+Highest level player is: 35
+ReplaceGroup: FAILURE
+IncreaseLevel: SUCCESS
+AddPlayer: SUCCESS
+AddPlayer: SUCCESS
+AddPlayer: SUCCESS
+IncreaseLevel: SUCCESS
+and there are no more players!
+AddGroup: SUCCESS
+Highest level player is: 35
+AddPlayer: SUCCESS
+ReplaceGroup: FAILURE
+Highest level player is: 35
+IncreaseLevel: SUCCESS
+and there are no more players!
+RemovePlayer: SUCCESS
+Rank	||	Player
+1	||	35
+2	||	27
+3	||	43
+4	||	37
+and there are no more players!
+IncreaseLevel: SUCCESS
+RemovePlayer: SUCCESS
+IncreaseLevel: SUCCESS
+Highest level player is: 35
+ReplaceGroup: FAILURE
+ReplaceGroup: SUCCESS
+AddPlayer: SUCCESS
+RemovePlayer: FAILURE
+AddPlayer: SUCCESS
+IncreaseLevel: SUCCESS
+AddGroup: SUCCESS
+AddGroup: SUCCESS
+AddPlayer: SUCCESS
+Rank	||	Player
+1	||	35
+2	||	27
+3	||	17
+4	||	20
+5	||	32
+6	||	43
+7	||	18
+8	||	19
+9	||	10
+10	||	13
+11	||	9
+12	||	6
+13	||	29
+14	||	15
+15	||	30
+16	||	14
+17	||	50
+18	||	37
+and there are no more players!
+Highest level player is: 18
+IncreaseLevel: SUCCESS
+RemovePlayer: SUCCESS
+ReplaceGroup: FAILURE
+Highest level player is: 35
+AddPlayer: FAILURE
+IncreaseLevel: SUCCESS
+AddPlayer: FAILURE
+RemovePlayer: FAILURE
+IncreaseLevel: INVALID_INPUT
+AddPlayer: SUCCESS
+ReplaceGroup: FAILURE
+RemovePlayer: SUCCESS
+AddGroup: SUCCESS
+ReplaceGroup: SUCCESS
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+Highest level player is: -1
+AddPlayer: INVALID_INPUT
+and there are no more players!
+AddPlayer: SUCCESS
+AddGroup: SUCCESS
+AddPlayer: SUCCESS
+Highest level player is: 27
+AddGroup: SUCCESS
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+IncreaseLevel: INVALID_INPUT
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+Highest level player is: 27
+IncreaseLevel: SUCCESS
+and there are no more players!
+AddPlayer: FAILURE
+AddPlayer: FAILURE
+ReplaceGroup: FAILURE
+IncreaseLevel: SUCCESS
+AddGroup: SUCCESS
+IncreaseLevel: SUCCESS
+RemovePlayer: SUCCESS
+Highest level player is: 27
+ReplaceGroup: FAILURE
+AddPlayer: SUCCESS
+AddGroup: SUCCESS
+AddGroup: SUCCESS
+IncreaseLevel: SUCCESS
+ReplaceGroup: SUCCESS
+AddPlayer: SUCCESS
+AddGroup: SUCCESS
+ReplaceGroup: FAILURE
+Rank	||	Player
+1	||	27
+2	||	35
+3	||	17
+4	||	19
+5	||	32
+6	||	9
+7	||	33
+8	||	43
+9	||	30
+10	||	14
+11	||	18
+12	||	1
+13	||	13
+14	||	29
+15	||	15
+16	||	22
+17	||	50
+18	||	34
+19	||	37
+20	||	24
+and there are no more players!
+AddGroup: SUCCESS
+ReplaceGroup: FAILURE
+AddPlayer: SUCCESS
+AddGroup: FAILURE
+AddGroup: SUCCESS
+AddPlayer: SUCCESS
+ReplaceGroup: FAILURE
+AddGroup: FAILURE
+ReplaceGroup: FAILURE
+RemovePlayer: FAILURE
+AddGroup: SUCCESS
+RemovePlayer: SUCCESS
+IncreaseLevel: SUCCESS
+RemovePlayer: SUCCESS
+IncreaseLevel: SUCCESS
+ReplaceGroup: FAILURE
+IncreaseLevel: SUCCESS
+AddPlayer: FAILURE
+IncreaseLevel: SUCCESS
+and there are no more players!
+AddPlayer: FAILURE
+ReplaceGroup: FAILURE
+ReplaceGroup: FAILURE
+IncreaseLevel: SUCCESS
+ReplaceGroup: FAILURE
+AddGroup: SUCCESS
+Rank	||	Player
+1	||	17
+2	||	22
+and there are no more players!
+AddPlayer: SUCCESS
+AddPlayer: SUCCESS
+RemovePlayer: FAILURE
+AddGroup: SUCCESS
+IncreaseLevel: SUCCESS
+Rank	||	Player
+1	||	27
+2	||	35
+3	||	43
+4	||	37
+and there are no more players!
+Rank	||	Player
+1	||	27
+2	||	35
+3	||	17
+4	||	19
+5	||	14
+6	||	9
+7	||	33
+8	||	43
+9	||	30
+10	||	13
+11	||	37
+12	||	18
+13	||	1
+14	||	38
+15	||	29
+16	||	15
+17	||	16
+18	||	22
+19	||	50
+20	||	34
+21	||	24
+22	||	39
+and there are no more players!
+AddGroup: FAILURE
+Highest level player is: 38
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+AddGroup: SUCCESS
+ReplaceGroup: SUCCESS
+IncreaseLevel: SUCCESS
+AddGroup: SUCCESS
+ReplaceGroup: FAILURE
+AddPlayer: SUCCESS
+AddGroup: SUCCESS
+IncreaseLevel: SUCCESS
+AddPlayer: SUCCESS
+AddPlayer: SUCCESS
+AddGroup: FAILURE
+IncreaseLevel: SUCCESS
+RemovePlayer: SUCCESS
+Highest level player is: 27
+ReplaceGroup: FAILURE
+AddPlayer: SUCCESS
+AddPlayer: SUCCESS
+Highest level player is: 27
+Highest level player is: 27
+AddPlayer: SUCCESS
+Rank	||	Player
+1	||	27
+2	||	19
+3	||	35
+4	||	17
+5	||	14
+6	||	9
+7	||	33
+8	||	43
+9	||	30
+10	||	13
+11	||	18
+12	||	37
+13	||	39
+14	||	26
+15	||	1
+16	||	38
+17	||	45
+18	||	20
+19	||	29
+20	||	36
+21	||	8
+22	||	15
+23	||	16
+24	||	22
+25	||	50
+26	||	24
+27	||	41
+and there are no more players!
+AddGroup: FAILURE
+IncreaseLevel: SUCCESS
+AddPlayer: SUCCESS
+Rank	||	Player
+1	||	27
+2	||	19
+3	||	35
+4	||	17
+5	||	14
+6	||	9
+7	||	33
+8	||	43
+9	||	30
+10	||	13
+11	||	18
+12	||	37
+13	||	39
+14	||	26
+15	||	1
+16	||	38
+17	||	45
+18	||	20
+19	||	29
+20	||	36
+21	||	8
+22	||	15
+23	||	16
+24	||	22
+25	||	50
+26	||	46
+27	||	24
+28	||	41
+and there are no more players!
+AddPlayer: SUCCESS
+IncreaseLevel: SUCCESS
+RemovePlayer: SUCCESS
+ReplaceGroup: SUCCESS
+IncreaseLevel: SUCCESS
+AddGroup: SUCCESS
+RemovePlayer: SUCCESS
+IncreaseLevel: SUCCESS
+ReplaceGroup: SUCCESS
+AddGroup: FAILURE
+Highest level player is: -1
+AddGroup: FAILURE
+Highest level player is: 41
+AddGroup: INVALID_INPUT
+ReplaceGroup: FAILURE
+RemovePlayer: SUCCESS
+AddPlayer: FAILURE
+AddPlayer: FAILURE
+AddPlayer: FAILURE
+RemovePlayer: SUCCESS
+IncreaseLevel: SUCCESS
+ReplaceGroup: FAILURE
+ReplaceGroup: FAILURE
+Rank	||	Player
+1	||	41
+and there are no more players!
+AddGroup: FAILURE
+Rank	||	Player
+1	||	27
+2	||	19
+3	||	17
+4	||	9
+5	||	20
+6	||	33
+7	||	43
+8	||	30
+9	||	13
+10	||	18
+11	||	37
+12	||	50
+13	||	39
+14	||	26
+15	||	1
+16	||	38
+17	||	45
+18	||	29
+19	||	36
+20	||	8
+21	||	11
+22	||	15
+23	||	22
+24	||	46
+25	||	41
+and there are no more players!
+AddPlayer: SUCCESS
+ReplaceGroup: SUCCESS
+IncreaseLevel: SUCCESS
+Rank	||	Player
+1	||	9
+2	||	50
+3	||	45
+4	||	29
+and there are no more players!
+ReplaceGroup: INVALID_INPUT
+ReplaceGroup: SUCCESS
+Highest level player is: 27
+AddGroup: SUCCESS
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+RemovePlayer: SUCCESS
+AddGroup: SUCCESS
+RemovePlayer: SUCCESS
+RemovePlayer: SUCCESS
+IncreaseLevel: SUCCESS
+Rank	||	Player
+1	||	19
+2	||	30
+3	||	18
+and there are no more players!
+RemovePlayer: SUCCESS
+AddPlayer: FAILURE
+Rank	||	Player
+1	||	17
+2	||	36
+3	||	8
+and there are no more players!
+Highest level player is: 27
+AddGroup: FAILURE
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+and there are no more players!
+AddGroup: FAILURE
+AddGroup: SUCCESS
+Rank	||	Player
+1	||	27
+2	||	19
+3	||	43
+4	||	17
+5	||	30
+6	||	9
+7	||	20
+8	||	33
+9	||	29
+10	||	18
+11	||	50
+12	||	39
+13	||	26
+14	||	1
+15	||	11
+16	||	45
+17	||	7
+18	||	36
+19	||	8
+20	||	15
+21	||	46
+22	||	41
+and there are no more players!
+RemovePlayer: SUCCESS
+RemovePlayer: SUCCESS
+and there are no more players!
+Rank	||	Player
+1	||	27
+2	||	43
+3	||	17
+4	||	30
+5	||	9
+6	||	20
+7	||	33
+8	||	29
+9	||	18
+10	||	50
+11	||	39
+12	||	26
+13	||	1
+14	||	11
+15	||	45
+16	||	36
+17	||	8
+18	||	15
+19	||	46
+20	||	41
+and there are no more players!
+AddPlayer: SUCCESS
+RemovePlayer: SUCCESS
+RemovePlayer: SUCCESS
+RemovePlayer: SUCCESS
+AddGroup: SUCCESS
+ReplaceGroup: FAILURE
+Highest level player is: 33
+AddGroup: SUCCESS
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+AddGroup: FAILURE
+ReplaceGroup: SUCCESS
+AddGroup: SUCCESS
+RemovePlayer: FAILURE
+and there are no more players!
+Highest level player is: 27
+Rank	||	Player
+1	||	27
+2	||	43
+3	||	30
+4	||	39
+5	||	20
+6	||	33
+7	||	29
+8	||	18
+9	||	50
+10	||	46
+11	||	1
+12	||	11
+13	||	45
+14	||	28
+15	||	36
+16	||	8
+17	||	15
+18	||	41
+and there are no more players!
+Highest level player is: 27
+ReplaceGroup: FAILURE
+ReplaceGroup: FAILURE
+AddGroup: SUCCESS
+IncreaseLevel: SUCCESS
+Highest level player is: 27
+ReplaceGroup: FAILURE
+ReplaceGroup: FAILURE
+AddPlayer: SUCCESS
+AddGroup: SUCCESS
+ReplaceGroup: SUCCESS
+RemovePlayer: SUCCESS
+Rank	||	Player
+1	||	43
+2	||	30
+3	||	39
+4	||	20
+5	||	29
+6	||	33
+7	||	18
+8	||	50
+9	||	46
+10	||	1
+11	||	11
+12	||	45
+13	||	49
+14	||	28
+15	||	36
+16	||	8
+17	||	15
+18	||	41
+and there are no more players!
+IncreaseLevel: SUCCESS
+ReplaceGroup: FAILURE
+AddGroup: SUCCESS
+AddGroup: SUCCESS
+AddPlayer: FAILURE
+AddGroup: FAILURE
+AddGroup: FAILURE
+Highest level player is: -1
+AddPlayer: SUCCESS
+RemovePlayer: SUCCESS
+ReplaceGroup: FAILURE
+Highest level player is: 43
+RemovePlayer: SUCCESS
+AddPlayer: SUCCESS
+IncreaseLevel: SUCCESS
+AddPlayer: FAILURE
+ReplaceGroup: SUCCESS
+AddPlayer: SUCCESS
+ReplaceGroup: SUCCESS
+AddPlayer: SUCCESS
+AddPlayer: SUCCESS
+RemovePlayer: SUCCESS
+AddPlayer: FAILURE
+AddPlayer: SUCCESS
+Rank	||	Player
+1	||	43
+2	||	30
+3	||	39
+4	||	20
+5	||	33
+6	||	18
+7	||	50
+8	||	12
+9	||	26
+10	||	42
+11	||	1
+12	||	45
+13	||	49
+14	||	28
+15	||	25
+16	||	36
+17	||	8
+18	||	15
+19	||	40
+20	||	41
+21	||	44
+and there are no more players!
+AddPlayer: FAILURE
+AddPlayer: SUCCESS
+AddPlayer: FAILURE
+IncreaseLevel: SUCCESS
+ReplaceGroup: SUCCESS
+ReplaceGroup: FAILURE
+and there are no more players!
+RemovePlayer: SUCCESS
+and there are no more players!
+RemovePlayer: SUCCESS
+ReplaceGroup: INVALID_INPUT
+IncreaseLevel: SUCCESS
+ReplaceGroup: FAILURE
+Rank	||	Player
+1	||	43
+2	||	20
+3	||	30
+4	||	39
+5	||	18
+6	||	50
+7	||	36
+8	||	12
+9	||	26
+10	||	42
+11	||	1
+12	||	45
+13	||	49
+14	||	28
+15	||	25
+16	||	8
+17	||	15
+18	||	40
+19	||	41
+20	||	44
+and there are no more players!
+Highest level player is: 30
+AddPlayer: SUCCESS
+AddGroup: SUCCESS
+ReplaceGroup: FAILURE
+RemovePlayer: SUCCESS
+RemovePlayer: FAILURE
+Highest level player is: -1
+RemovePlayer: FAILURE
+RemovePlayer: SUCCESS
+ReplaceGroup: SUCCESS
+Highest level player is: 43
+RemovePlayer: SUCCESS
+Highest level player is: -1
+ReplaceGroup: INVALID_INPUT
+ReplaceGroup: SUCCESS
+RemovePlayer: SUCCESS
+RemovePlayer: FAILURE
+IncreaseLevel: SUCCESS
+ReplaceGroup: SUCCESS
+ReplaceGroup: FAILURE
+AddPlayer: INVALID_INPUT
+RemovePlayer: SUCCESS
+ReplaceGroup: SUCCESS
+AddGroup: SUCCESS
+IncreaseLevel: SUCCESS
+RemovePlayer: SUCCESS
+IncreaseLevel: SUCCESS
+Highest level player is: 20
+Rank	||	Player
+1	||	20
+2	||	30
+3	||	39
+4	||	42
+5	||	18
+6	||	50
+7	||	36
+8	||	12
+9	||	1
+10	||	49
+11	||	28
+12	||	25
+13	||	8
+14	||	15
+15	||	41
+and there are no more players!
+Highest level player is: -1
+IncreaseLevel: SUCCESS
+ReplaceGroup: FAILURE
+AddGroup: FAILURE
+AddPlayer: SUCCESS
+AddGroup: SUCCESS
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+RemovePlayer: FAILURE
+AddPlayer: SUCCESS
+Rank	||	Player
+1	||	20
+2	||	42
+3	||	30
+4	||	39
+5	||	49
+6	||	18
+7	||	50
+8	||	36
+9	||	12
+10	||	1
+11	||	45
+12	||	28
+13	||	25
+14	||	8
+15	||	15
+16	||	6
+17	||	41
+and there are no more players!
+AddGroup: SUCCESS
+ReplaceGroup: SUCCESS
+Rank	||	Player
+1	||	20
+2	||	42
+3	||	30
+4	||	39
+5	||	49
+6	||	18
+7	||	50
+8	||	36
+9	||	12
+10	||	1
+11	||	45
+12	||	28
+13	||	25
+14	||	8
+15	||	15
+16	||	6
+17	||	41
+and there are no more players!
+AddPlayer: SUCCESS
+AddGroup: SUCCESS
+IncreaseLevel: INVALID_INPUT
+AddPlayer: FAILURE
+IncreaseLevel: SUCCESS
+AddPlayer: FAILURE
+AddPlayer: FAILURE
+IncreaseLevel: SUCCESS
+RemovePlayer: SUCCESS
+ReplaceGroup: FAILURE
+Rank	||	Player
+1	||	30
+2	||	20
+3	||	42
+4	||	39
+5	||	49
+6	||	50
+7	||	18
+8	||	36
+9	||	12
+10	||	1
+11	||	45
+12	||	28
+13	||	27
+14	||	25
+15	||	8
+16	||	15
+17	||	6
+and there are no more players!
+AddGroup: FAILURE
+IncreaseLevel: SUCCESS
+ReplaceGroup: SUCCESS
+IncreaseLevel: SUCCESS
+AddPlayer: SUCCESS
+AddGroup: FAILURE
+IncreaseLevel: SUCCESS
+RemovePlayer: FAILURE
+IncreaseLevel: SUCCESS
+AddPlayer: SUCCESS
+and there are no more players!
+AddPlayer: SUCCESS
+AddPlayer: SUCCESS
+RemovePlayer: SUCCESS
+IncreaseLevel: SUCCESS
+AddPlayer: SUCCESS
+AddGroup: SUCCESS
+Highest level player is: 20
+Rank	||	Player
+1	||	20
+2	||	30
+3	||	42
+4	||	39
+5	||	40
+6	||	49
+7	||	15
+8	||	18
+9	||	36
+10	||	12
+11	||	1
+12	||	45
+13	||	21
+14	||	28
+15	||	27
+16	||	25
+17	||	14
+18	||	8
+19	||	6
+20	||	44
+21	||	48
+and there are no more players!
+AddPlayer: FAILURE
+AddPlayer: FAILURE
+ReplaceGroup: FAILURE
+AddGroup: FAILURE
+AddGroup: SUCCESS
+AddGroup: FAILURE
+Highest level player is: -1
+ReplaceGroup: FAILURE
+IncreaseLevel: SUCCESS
+AddGroup: FAILURE
+IncreaseLevel: SUCCESS
+Highest level player is: 45
+ReplaceGroup: SUCCESS
+AddGroup: SUCCESS
+AddPlayer: SUCCESS
+AddGroup: FAILURE
+Rank	||	Player
+1	||	20
+2	||	30
+3	||	42
+4	||	39
+5	||	15
+6	||	40
+7	||	49
+8	||	18
+9	||	36
+10	||	12
+11	||	1
+12	||	45
+13	||	21
+14	||	28
+15	||	27
+16	||	25
+17	||	14
+18	||	8
+19	||	6
+20	||	44
+21	||	10
+22	||	48
+and there are no more players!
+AddGroup: FAILURE
+RemovePlayer: FAILURE
+IncreaseLevel: SUCCESS
+ReplaceGroup: FAILURE
+ReplaceGroup: FAILURE
+ReplaceGroup: FAILURE
+IncreaseLevel: SUCCESS
+ReplaceGroup: SUCCESS
+ReplaceGroup: FAILURE
+AddGroup: SUCCESS
+ReplaceGroup: FAILURE
+ReplaceGroup: SUCCESS
+ReplaceGroup: FAILURE
+AddPlayer: SUCCESS
+AddGroup: SUCCESS
+Rank	||	Player
+1	||	20
+2	||	30
+3	||	42
+4	||	15
+5	||	39
+6	||	40
+7	||	49
+8	||	18
+9	||	36
+10	||	12
+11	||	1
+12	||	45
+13	||	21
+14	||	28
+15	||	27
+16	||	25
+17	||	9
+18	||	14
+19	||	8
+20	||	6
+21	||	44
+22	||	10
+23	||	48
+and there are no more players!
+IncreaseLevel: SUCCESS
+AddGroup: SUCCESS
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+RemovePlayer: SUCCESS
+IncreaseLevel: SUCCESS
+ReplaceGroup: FAILURE
+RemovePlayer: SUCCESS
+AddGroup: SUCCESS
+AddPlayer: FAILURE
+RemovePlayer: FAILURE
+and there are no more players!
+ReplaceGroup: FAILURE
+ReplaceGroup: FAILURE
+IncreaseLevel: SUCCESS
+Highest level player is: 20
+Rank	||	Player
+1	||	20
+2	||	30
+3	||	42
+4	||	15
+5	||	39
+6	||	49
+7	||	1
+8	||	36
+9	||	28
+10	||	8
+11	||	18
+12	||	12
+13	||	45
+14	||	21
+15	||	27
+16	||	25
+17	||	9
+18	||	14
+19	||	6
+20	||	44
+21	||	48
+and there are no more players!
+Highest level player is: 15
+Rank	||	Player
+1	||	20
+2	||	30
+3	||	42
+4	||	15
+5	||	39
+6	||	49
+7	||	1
+8	||	36
+9	||	28
+10	||	8
+11	||	18
+12	||	12
+13	||	45
+14	||	21
+15	||	27
+16	||	25
+17	||	9
+18	||	14
+19	||	6
+20	||	44
+21	||	48
+and there are no more players!
+ReplaceGroup: SUCCESS
+and there are no more players!
+IncreaseLevel: SUCCESS
+AddPlayer: SUCCESS
+AddGroup: SUCCESS
+RemovePlayer: SUCCESS
+AddPlayer: FAILURE
+AddPlayer: FAILURE
+ReplaceGroup: SUCCESS
+AddPlayer: FAILURE
+AddPlayer: FAILURE
+RemovePlayer: FAILURE
+ReplaceGroup: FAILURE
+Rank	||	Player
+1	||	10
+and there are no more players!
+Rank	||	Player
+1	||	27
+and there are no more players!
+AddPlayer: SUCCESS
+Highest level player is: 20
+AddPlayer: FAILURE
+AddPlayer: FAILURE
+ReplaceGroup: SUCCESS
+IncreaseLevel: INVALID_INPUT
+ReplaceGroup: SUCCESS
+Rank	||	Player
+1	||	20
+2	||	30
+3	||	42
+4	||	15
+5	||	49
+6	||	1
+7	||	36
+8	||	28
+9	||	8
+10	||	18
+11	||	12
+12	||	10
+13	||	45
+14	||	3
+15	||	21
+16	||	27
+17	||	25
+18	||	9
+19	||	14
+20	||	6
+21	||	44
+22	||	48
+and there are no more players!
+IncreaseLevel: SUCCESS
+ReplaceGroup: SUCCESS
+ReplaceGroup: SUCCESS
+RemovePlayer: INVALID_INPUT
+and there are no more players!
+ReplaceGroup: FAILURE
+ReplaceGroup: FAILURE
+ReplaceGroup: FAILURE
+ReplaceGroup: SUCCESS
+ReplaceGroup: SUCCESS
+AddPlayer: FAILURE
+Highest level player is: -1
+AddPlayer: SUCCESS
+Highest level player is: 20
+IncreaseLevel: SUCCESS
+Highest level player is: 20
+ReplaceGroup: SUCCESS
+ReplaceGroup: FAILURE
+ReplaceGroup: SUCCESS
+IncreaseLevel: SUCCESS
+ReplaceGroup: FAILURE
+IncreaseLevel: SUCCESS
+AddPlayer: INVALID_INPUT
+AddPlayer: FAILURE
+ReplaceGroup: FAILURE
+ReplaceGroup: FAILURE
+ReplaceGroup: SUCCESS
+Rank	||	Player
+1	||	49
+2	||	9
+and there are no more players!
+ReplaceGroup: FAILURE
+AddPlayer: FAILURE
+ReplaceGroup: FAILURE
+RemovePlayer: SUCCESS
+Rank	||	Player
+1	||	14
+and there are no more players!
+Highest level player is: 20
+Rank	||	Player
+1	||	20
+2	||	6
+3	||	44
+and there are no more players!
+AddPlayer: FAILURE
+IncreaseLevel: SUCCESS
+AddGroup: SUCCESS
+Highest level player is: 20
+IncreaseLevel: SUCCESS
+RemovePlayer: FAILURE
+AddGroup: SUCCESS
+AddPlayer: SUCCESS
+Highest level player is: -1
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+AddGroup: FAILURE
+ReplaceGroup: FAILURE
+Highest level player is: -1
+Highest level player is: 14
+AddGroup: FAILURE
+IncreaseLevel: SUCCESS
+AddPlayer: SUCCESS
+IncreaseLevel: SUCCESS
+AddPlayer: FAILURE
+AddGroup: SUCCESS
+RemovePlayer: SUCCESS
+Rank	||	Player
+1	||	14
+and there are no more players!
+RemovePlayer: SUCCESS
+AddGroup: SUCCESS
+ReplaceGroup: SUCCESS
+ReplaceGroup: SUCCESS
+AddGroup: SUCCESS
+RemovePlayer: INVALID_INPUT
+AddPlayer: SUCCESS
+AddGroup: SUCCESS
+IncreaseLevel: SUCCESS
+IncreaseLevel: INVALID_INPUT
+ReplaceGroup: FAILURE
+Highest level player is: 20
+ReplaceGroup: FAILURE
+Highest level player is: 20
+AddGroup: INVALID_INPUT
+ReplaceGroup: INVALID_INPUT
+ReplaceGroup: FAILURE
+AddGroup: SUCCESS
+AddPlayer: SUCCESS
+AddGroup: FAILURE
+AddPlayer: SUCCESS
+AddGroup: SUCCESS
+Highest level player is: -1
+AddPlayer: FAILURE
+ReplaceGroup: FAILURE
+Highest level player is: -1
+ReplaceGroup: SUCCESS
+ReplaceGroup: FAILURE
+AddGroup: FAILURE
+IncreaseLevel: SUCCESS
+ReplaceGroup: SUCCESS
+RemovePlayer: SUCCESS
+Highest level player is: -1
+IncreaseLevel: SUCCESS
+AddGroup: SUCCESS
+IncreaseLevel: SUCCESS
+Highest level player is: -1
+IncreaseLevel: SUCCESS
+RemovePlayer: SUCCESS
+RemovePlayer: SUCCESS
+AddPlayer: SUCCESS
+AddPlayer: FAILURE
+AddPlayer: FAILURE
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+ReplaceGroup: FAILURE
+Rank	||	Player
+1	||	15
+2	||	30
+3	||	42
+4	||	49
+5	||	8
+6	||	1
+7	||	27
+8	||	12
+9	||	14
+10	||	28
+11	||	10
+12	||	18
+13	||	32
+14	||	22
+15	||	6
+16	||	45
+17	||	21
+18	||	16
+19	||	33
+20	||	9
+21	||	43
+22	||	44
+23	||	48
+and there are no more players!
+ReplaceGroup: SUCCESS
+AddPlayer: SUCCESS
+AddGroup: FAILURE
+IncreaseLevel: SUCCESS
+AddGroup: SUCCESS
+ReplaceGroup: FAILURE
+IncreaseLevel: SUCCESS
+AddPlayer: FAILURE
+RemovePlayer: SUCCESS
+IncreaseLevel: SUCCESS
+AddPlayer: SUCCESS
+Highest level player is: -1
+AddGroup: FAILURE
+AddGroup: FAILURE
+AddPlayer: FAILURE
+AddGroup: INVALID_INPUT
+AddPlayer: FAILURE
+ReplaceGroup: SUCCESS
+Highest level player is: 15
+Rank	||	Player
+1	||	15
+2	||	30
+3	||	42
+4	||	1
+5	||	49
+6	||	8
+7	||	27
+8	||	12
+9	||	14
+10	||	28
+11	||	10
+12	||	6
+13	||	32
+14	||	22
+15	||	17
+16	||	21
+17	||	45
+18	||	16
+19	||	33
+20	||	9
+21	||	36
+22	||	43
+23	||	44
+24	||	48
+and there are no more players!
+AddGroup: SUCCESS
+AddGroup: SUCCESS
+AddPlayer: FAILURE
+IncreaseLevel: SUCCESS
+AddPlayer: SUCCESS
+ReplaceGroup: SUCCESS
+IncreaseLevel: SUCCESS
+AddPlayer: FAILURE
+AddPlayer: FAILURE
+ReplaceGroup: FAILURE
+ReplaceGroup: FAILURE
+AddPlayer: SUCCESS
+ReplaceGroup: FAILURE
+ReplaceGroup: SUCCESS
+ReplaceGroup: SUCCESS
+IncreaseLevel: SUCCESS
+AddPlayer: FAILURE
+AddPlayer: FAILURE
+ReplaceGroup: SUCCESS
+AddPlayer: FAILURE
+AddGroup: SUCCESS
+ReplaceGroup: FAILURE
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+and there are no more players!
+Rank	||	Player
+1	||	15
+2	||	8
+3	||	30
+4	||	42
+5	||	14
+6	||	1
+7	||	49
+8	||	27
+9	||	45
+10	||	12
+11	||	28
+12	||	10
+13	||	6
+14	||	32
+15	||	22
+16	||	44
+17	||	17
+18	||	21
+19	||	7
+20	||	16
+21	||	33
+22	||	9
+23	||	35
+24	||	36
+25	||	43
+26	||	48
+and there are no more players!
+Rank	||	Player
+1	||	15
+2	||	8
+3	||	30
+4	||	42
+5	||	14
+6	||	1
+7	||	49
+8	||	27
+9	||	45
+10	||	12
+11	||	28
+12	||	10
+13	||	6
+14	||	32
+15	||	22
+16	||	44
+17	||	17
+18	||	21
+19	||	7
+20	||	16
+21	||	33
+22	||	9
+23	||	35
+24	||	36
+25	||	43
+26	||	48
+and there are no more players!
+IncreaseLevel: SUCCESS
+Rank	||	Player
+1	||	27
+and there are no more players!
+IncreaseLevel: SUCCESS
+RemovePlayer: SUCCESS
+ReplaceGroup: FAILURE
+RemovePlayer: SUCCESS
+ReplaceGroup: SUCCESS
+ReplaceGroup: FAILURE
+Rank	||	Player
+1	||	15
+2	||	8
+3	||	30
+4	||	14
+5	||	28
+6	||	1
+7	||	49
+8	||	10
+9	||	27
+10	||	45
+11	||	12
+12	||	6
+13	||	32
+14	||	22
+15	||	44
+16	||	17
+17	||	21
+18	||	7
+19	||	16
+20	||	33
+21	||	9
+22	||	35
+23	||	43
+24	||	48
+and there are no more players!
+Rank	||	Player
+1	||	27
+and there are no more players!
+and there are no more players!
+AddGroup: FAILURE
+ReplaceGroup: SUCCESS
+IncreaseLevel: SUCCESS
+Highest level player is: 15
+Highest level player is: 33
+AddPlayer: FAILURE
+AddPlayer: FAILURE
+RemovePlayer: FAILURE
+IncreaseLevel: INVALID_INPUT
+AddPlayer: SUCCESS
+ReplaceGroup: FAILURE
+RemovePlayer: FAILURE
+AddPlayer: INVALID_INPUT
+IncreaseLevel: SUCCESS
+AddGroup: FAILURE
+AddGroup: SUCCESS
+IncreaseLevel: SUCCESS
+RemovePlayer: INVALID_INPUT
+ReplaceGroup: SUCCESS
+AddPlayer: FAILURE
+AddGroup: FAILURE
+IncreaseLevel: SUCCESS
+AddPlayer: SUCCESS
+ReplaceGroup: FAILURE
+AddPlayer: SUCCESS
+RemovePlayer: SUCCESS
+RemovePlayer: SUCCESS
+RemovePlayer: SUCCESS
+AddPlayer: SUCCESS
+RemovePlayer: SUCCESS
+ReplaceGroup: SUCCESS
+AddPlayer: SUCCESS
+AddGroup: FAILURE
+RemovePlayer: FAILURE
+AddPlayer: SUCCESS
+IncreaseLevel: SUCCESS
+AddGroup: SUCCESS
+IncreaseLevel: SUCCESS
+AddGroup: FAILURE
+AddPlayer: FAILURE
+ReplaceGroup: FAILURE
+AddGroup: SUCCESS
+Highest level player is: 15
+IncreaseLevel: SUCCESS
+ReplaceGroup: SUCCESS
+RemovePlayer: SUCCESS
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+ReplaceGroup: FAILURE
+AddGroup: INVALID_INPUT
+and there are no more players!
+AddGroup: SUCCESS
+ReplaceGroup: INVALID_INPUT
+Rank	||	Player
+1	||	15
+2	||	8
+3	||	30
+4	||	14
+5	||	12
+6	||	45
+7	||	28
+8	||	49
+9	||	10
+10	||	27
+11	||	21
+12	||	16
+13	||	6
+14	||	32
+15	||	22
+16	||	17
+17	||	7
+18	||	11
+19	||	33
+20	||	35
+21	||	29
+22	||	34
+23	||	43
+24	||	47
+25	||	48
+and there are no more players!
+RemovePlayer: SUCCESS
+ReplaceGroup: FAILURE
+AddGroup: SUCCESS
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+Highest level player is: -1
+AddPlayer: SUCCESS
+AddPlayer: FAILURE
+RemovePlayer: SUCCESS
+AddPlayer: SUCCESS
+Highest level player is: 30
+AddGroup: SUCCESS
+AddPlayer: FAILURE
+AddPlayer: SUCCESS
+IncreaseLevel: SUCCESS
+RemovePlayer: FAILURE
+AddPlayer: SUCCESS
+IncreaseLevel: SUCCESS
+AddGroup: SUCCESS
+Highest level player is: 15
+AddGroup: SUCCESS
+RemovePlayer: FAILURE
+RemovePlayer: INVALID_INPUT
+AddPlayer: FAILURE
+ReplaceGroup: FAILURE
+Highest level player is: 15
+IncreaseLevel: SUCCESS
+AddGroup: FAILURE
+AddPlayer: FAILURE
+AddPlayer: SUCCESS
+IncreaseLevel: SUCCESS
+AddGroup: INVALID_INPUT
+IncreaseLevel: INVALID_INPUT
+ReplaceGroup: FAILURE
+ReplaceGroup: FAILURE
+AddGroup: SUCCESS
+Highest level player is: 8
+and there are no more players!
+ReplaceGroup: FAILURE
+IncreaseLevel: SUCCESS
+RemovePlayer: SUCCESS
+AddGroup: INVALID_INPUT
+AddPlayer: FAILURE
+AddGroup: FAILURE
+and there are no more players!
+RemovePlayer: SUCCESS
+Rank	||	Player
+1	||	15
+2	||	30
+3	||	8
+4	||	14
+5	||	45
+6	||	28
+7	||	49
+8	||	16
+9	||	27
+10	||	6
+11	||	29
+12	||	32
+13	||	33
+14	||	22
+15	||	17
+16	||	35
+17	||	7
+18	||	25
+19	||	18
+20	||	38
+21	||	34
+22	||	26
+23	||	46
+24	||	43
+25	||	47
+26	||	48
+and there are no more players!
+IncreaseLevel: SUCCESS
+ReplaceGroup: FAILURE
+ReplaceGroup: SUCCESS
+AddPlayer: FAILURE
+RemovePlayer: SUCCESS
+IncreaseLevel: SUCCESS
+Highest level player is: 15
+AddPlayer: FAILURE
+AddGroup: FAILURE
+ReplaceGroup: FAILURE
+AddPlayer: SUCCESS
+IncreaseLevel: SUCCESS
+Rank	||	Player
+1	||	6
+2	||	35
+3	||	26
+and there are no more players!
+Highest level player is: 15
+AddGroup: FAILURE
+IncreaseLevel: SUCCESS
+AddPlayer: FAILURE
+Rank	||	Player
+1	||	15
+2	||	30
+3	||	8
+4	||	14
+5	||	45
+6	||	28
+7	||	49
+8	||	6
+9	||	33
+10	||	27
+11	||	17
+12	||	29
+13	||	32
+14	||	22
+15	||	35
+16	||	7
+17	||	25
+18	||	48
+19	||	18
+20	||	38
+21	||	34
+22	||	26
+23	||	46
+24	||	43
+25	||	44
+26	||	47
+and there are no more players!
+ReplaceGroup: INVALID_INPUT
+RemovePlayer: FAILURE
+AddGroup: FAILURE
+IncreaseLevel: SUCCESS
+ReplaceGroup: FAILURE
+AddPlayer: FAILURE
+AddGroup: SUCCESS
+AddGroup: SUCCESS
+Highest level player is: 15
+Rank	||	Player
+1	||	14
+and there are no more players!
+Highest level player is: 15
+ReplaceGroup: INVALID_INPUT
+AddPlayer: FAILURE
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+ReplaceGroup: FAILURE
+AddPlayer: SUCCESS
+ReplaceGroup: SUCCESS
+AddGroup: FAILURE
+ReplaceGroup: FAILURE
+AddPlayer: FAILURE
+Highest level player is: 47
+RemovePlayer: SUCCESS
+AddGroup: SUCCESS
+AddPlayer: FAILURE
+Highest level player is: 46
+ReplaceGroup: SUCCESS
+IncreaseLevel: SUCCESS
+Rank	||	Player
+1	||	17
+2	||	29
+and there are no more players!
+IncreaseLevel: SUCCESS
+ReplaceGroup: SUCCESS
+AddPlayer: FAILURE
+ReplaceGroup: INVALID_INPUT
+IncreaseLevel: SUCCESS
+ReplaceGroup: SUCCESS
+AddGroup: SUCCESS
+ReplaceGroup: FAILURE
+IncreaseLevel: INVALID_INPUT
+ReplaceGroup: FAILURE
+AddGroup: SUCCESS
+IncreaseLevel: SUCCESS
+ReplaceGroup: FAILURE
+AddGroup: SUCCESS
+AddPlayer: SUCCESS
+IncreaseLevel: SUCCESS
+Highest level player is: -1
+Highest level player is: 17
+Highest level player is: 6
+Rank	||	Player
+1	||	15
+2	||	49
+3	||	30
+4	||	8
+5	||	14
+6	||	45
+7	||	27
+8	||	28
+9	||	6
+10	||	17
+11	||	7
+12	||	29
+13	||	25
+14	||	32
+15	||	22
+16	||	42
+17	||	16
+18	||	35
+19	||	48
+20	||	18
+21	||	38
+22	||	34
+23	||	46
+24	||	26
+25	||	43
+26	||	44
+27	||	47
+and there are no more players!
+AddGroup: SUCCESS
+AddGroup: SUCCESS
+AddPlayer: SUCCESS
+ReplaceGroup: SUCCESS
+ReplaceGroup: SUCCESS
+AddGroup: FAILURE
+Highest level player is: 15
+IncreaseLevel: SUCCESS
+AddGroup: SUCCESS
+ReplaceGroup: SUCCESS
+ReplaceGroup: SUCCESS
+Rank	||	Player
+1	||	15
+2	||	49
+3	||	8
+4	||	30
+5	||	14
+6	||	45
+7	||	27
+8	||	28
+9	||	6
+10	||	17
+11	||	7
+12	||	29
+13	||	25
+14	||	32
+15	||	22
+16	||	42
+17	||	16
+18	||	35
+19	||	48
+20	||	3
+21	||	18
+22	||	38
+23	||	34
+24	||	46
+25	||	26
+26	||	43
+27	||	44
+28	||	47
+and there are no more players!
+IncreaseLevel: SUCCESS
+Highest level player is: 15
+AddPlayer: FAILURE
+AddPlayer: FAILURE
+AddPlayer: FAILURE
+ReplaceGroup: FAILURE
+ReplaceGroup: SUCCESS
+ReplaceGroup: FAILURE
+IncreaseLevel: SUCCESS
+AddGroup: SUCCESS
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+ReplaceGroup: SUCCESS
+AddPlayer: FAILURE
+Rank	||	Player
+1	||	16
+and there are no more players!
+ReplaceGroup: SUCCESS
+AddPlayer: SUCCESS
+AddPlayer: FAILURE
+RemovePlayer: SUCCESS
+AddGroup: SUCCESS
+Highest level player is: 14
+ReplaceGroup: FAILURE
+IncreaseLevel: SUCCESS
+Rank	||	Player
+1	||	4
+and there are no more players!
+AddPlayer: FAILURE
+AddPlayer: SUCCESS
+ReplaceGroup: FAILURE
+RemovePlayer: FAILURE
+AddGroup: FAILURE
+AddGroup: FAILURE
+AddPlayer: FAILURE
+RemovePlayer: SUCCESS
+Highest level player is: 18
+IncreaseLevel: SUCCESS
+Rank	||	Player
+1	||	15
+2	||	49
+3	||	8
+4	||	30
+5	||	14
+6	||	45
+7	||	27
+8	||	28
+9	||	6
+10	||	29
+11	||	25
+12	||	17
+13	||	22
+14	||	7
+15	||	3
+16	||	42
+17	||	16
+18	||	4
+19	||	10
+20	||	48
+21	||	18
+22	||	38
+23	||	34
+24	||	46
+25	||	26
+26	||	43
+27	||	44
+28	||	47
+and there are no more players!
+AddPlayer: FAILURE
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+Highest level player is: 15
+ReplaceGroup: FAILURE
+ReplaceGroup: FAILURE
+ReplaceGroup: FAILURE
+AddPlayer: FAILURE
+AddPlayer: SUCCESS
+AddPlayer: FAILURE
+AddPlayer: FAILURE
+ReplaceGroup: FAILURE
+RemovePlayer: SUCCESS
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+AddGroup: SUCCESS
+RemovePlayer: SUCCESS
+AddPlayer: SUCCESS
+IncreaseLevel: SUCCESS
+RemovePlayer: FAILURE
+IncreaseLevel: SUCCESS
+RemovePlayer: FAILURE
+IncreaseLevel: SUCCESS
+ReplaceGroup: SUCCESS
+AddPlayer: SUCCESS
+AddPlayer: FAILURE
+RemovePlayer: SUCCESS
+AddGroup: SUCCESS
+AddPlayer: FAILURE
+and there are no more players!
+Highest level player is: 15
+AddGroup: FAILURE
+IncreaseLevel: SUCCESS
+ReplaceGroup: FAILURE
+Highest level player is: -1
+IncreaseLevel: SUCCESS
+RemovePlayer: SUCCESS
+ReplaceGroup: FAILURE
+ReplaceGroup: FAILURE
+AddGroup: FAILURE
+and there are no more players!
+Highest level player is: 15
+RemovePlayer: SUCCESS
+IncreaseLevel: SUCCESS
+Highest level player is: 15
+RemovePlayer: FAILURE
+AddGroup: SUCCESS
+RemovePlayer: FAILURE
+AddPlayer: FAILURE
+AddGroup: FAILURE
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+RemovePlayer: SUCCESS
+AddPlayer: FAILURE
+ReplaceGroup: SUCCESS
+AddPlayer: SUCCESS
+AddPlayer: FAILURE
+AddGroup: FAILURE
+Highest level player is: 30
+RemovePlayer: SUCCESS
+Rank	||	Player
+1	||	46
+and there are no more players!
+RemovePlayer: SUCCESS
+Highest level player is: 49
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+ReplaceGroup: FAILURE
+AddPlayer: SUCCESS
+Highest level player is: 15
+RemovePlayer: SUCCESS
+RemovePlayer: FAILURE
+AddGroup: FAILURE
+IncreaseLevel: SUCCESS
+AddPlayer: FAILURE
+AddPlayer: SUCCESS
+AddPlayer: SUCCESS
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+AddPlayer: FAILURE
+AddGroup: SUCCESS
+AddGroup: INVALID_INPUT
+AddPlayer: SUCCESS
+ReplaceGroup: FAILURE
+AddGroup: FAILURE
+AddPlayer: SUCCESS
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+ReplaceGroup: INVALID_INPUT
+AddGroup: FAILURE
+Highest level player is: 15
+IncreaseLevel: SUCCESS
+RemovePlayer: SUCCESS
+AddPlayer: FAILURE
+IncreaseLevel: SUCCESS
+AddPlayer: FAILURE
+IncreaseLevel: SUCCESS
+AddPlayer: FAILURE
+AddGroup: FAILURE
+Highest level player is: 15
+ReplaceGroup: SUCCESS
+IncreaseLevel: SUCCESS
+AddPlayer: SUCCESS
+AddGroup: FAILURE
+AddPlayer: SUCCESS
+RemovePlayer: SUCCESS
+IncreaseLevel: SUCCESS
+AddPlayer: FAILURE
+Highest level player is: 15
+RemovePlayer: SUCCESS
+IncreaseLevel: SUCCESS
+AddGroup: FAILURE
+and there are no more players!
+AddPlayer: FAILURE
+AddPlayer: FAILURE
+AddGroup: FAILURE
+RemovePlayer: FAILURE
+AddGroup: FAILURE
+IncreaseLevel: SUCCESS
+AddPlayer: FAILURE
+IncreaseLevel: SUCCESS
+RemovePlayer: SUCCESS
+RemovePlayer: SUCCESS
+ReplaceGroup: SUCCESS
+IncreaseLevel: INVALID_INPUT
+AddPlayer: SUCCESS
+ReplaceGroup: SUCCESS
+Highest level player is: 27
+AddPlayer: FAILURE
+AddGroup: FAILURE
+AddGroup: SUCCESS
+RemovePlayer: INVALID_INPUT
+AddPlayer: SUCCESS
+ReplaceGroup: SUCCESS
+ReplaceGroup: FAILURE
+Rank	||	Player
+1	||	13
+and there are no more players!
+AddPlayer: SUCCESS
+AddGroup: SUCCESS
+ReplaceGroup: SUCCESS
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+AddPlayer: FAILURE
+AddGroup: FAILURE
+AddPlayer: SUCCESS
+ReplaceGroup: SUCCESS
+Highest level player is: 27
+RemovePlayer: SUCCESS
+ReplaceGroup: FAILURE
+AddGroup: SUCCESS
+IncreaseLevel: SUCCESS
+AddGroup: SUCCESS
+IncreaseLevel: SUCCESS
+AddPlayer: SUCCESS
+AddPlayer: SUCCESS
+RemovePlayer: SUCCESS
+AddPlayer: SUCCESS
+AddPlayer: FAILURE
+AddGroup: SUCCESS
+AddGroup: SUCCESS
+IncreaseLevel: SUCCESS
+AddPlayer: SUCCESS
+AddPlayer: SUCCESS
+IncreaseLevel: SUCCESS
+Highest level player is: 21
+AddGroup: SUCCESS
+ReplaceGroup: SUCCESS
+AddPlayer: FAILURE
+AddPlayer: FAILURE
+AddPlayer: FAILURE
+AddPlayer: SUCCESS
+IncreaseLevel: SUCCESS
+RemovePlayer: INVALID_INPUT
+AddGroup: FAILURE
+ReplaceGroup: SUCCESS
+IncreaseLevel: SUCCESS
+AddPlayer: FAILURE
+AddPlayer: FAILURE
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+AddPlayer: SUCCESS
+AddPlayer: FAILURE
+ReplaceGroup: SUCCESS
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+Rank	||	Player
+1	||	27
+2	||	8
+3	||	49
+4	||	30
+5	||	3
+6	||	25
+7	||	17
+8	||	22
+9	||	16
+10	||	42
+11	||	19
+12	||	33
+13	||	46
+14	||	36
+15	||	28
+16	||	13
+17	||	18
+18	||	20
+19	||	4
+20	||	10
+21	||	2
+22	||	11
+23	||	21
+24	||	5
+25	||	34
+26	||	1
+27	||	9
+28	||	39
+29	||	15
+30	||	26
+31	||	6
+32	||	37
+33	||	31
+34	||	43
+and there are no more players!
+ReplaceGroup: INVALID_INPUT
+RemovePlayer: SUCCESS
+ReplaceGroup: FAILURE
+Rank	||	Player
+1	||	49
+2	||	22
+3	||	10
+and there are no more players!
+AddPlayer: SUCCESS
+Rank	||	Player
+1	||	27
+2	||	8
+3	||	49
+4	||	30
+5	||	3
+6	||	25
+7	||	22
+8	||	16
+9	||	42
+10	||	19
+11	||	33
+12	||	46
+13	||	36
+14	||	28
+15	||	13
+16	||	18
+17	||	20
+18	||	4
+19	||	10
+20	||	2
+21	||	11
+22	||	21
+23	||	5
+24	||	34
+25	||	1
+26	||	9
+27	||	39
+28	||	15
+29	||	26
+30	||	6
+31	||	37
+32	||	31
+33	||	38
+34	||	43
+and there are no more players!
+RemovePlayer: SUCCESS
+ReplaceGroup: SUCCESS
+IncreaseLevel: SUCCESS
+ReplaceGroup: SUCCESS
+and there are no more players!
+Highest level player is: 27
+AddGroup: SUCCESS
+AddPlayer: SUCCESS
+IncreaseLevel: SUCCESS
+ReplaceGroup: FAILURE
+AddPlayer: FAILURE
+AddGroup: FAILURE
+RemovePlayer: SUCCESS
+AddPlayer: SUCCESS
+AddGroup: SUCCESS
+ReplaceGroup: SUCCESS
+Highest level player is: 27
+RemovePlayer: SUCCESS
+IncreaseLevel: SUCCESS
+AddPlayer: SUCCESS
+Rank	||	Player
+1	||	27
+2	||	8
+3	||	49
+4	||	30
+5	||	3
+6	||	25
+7	||	22
+8	||	42
+9	||	19
+10	||	33
+11	||	46
+12	||	9
+13	||	36
+14	||	28
+15	||	13
+16	||	1
+17	||	18
+18	||	20
+19	||	4
+20	||	16
+21	||	39
+22	||	50
+23	||	10
+24	||	2
+25	||	11
+26	||	21
+27	||	5
+28	||	23
+29	||	15
+30	||	26
+31	||	6
+32	||	37
+33	||	38
+34	||	43
+and there are no more players!
+RemovePlayer: SUCCESS
+AddGroup: FAILURE
+IncreaseLevel: SUCCESS
+ReplaceGroup: SUCCESS
+Highest level player is: 27
+AddGroup: FAILURE
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+AddGroup: FAILURE
+AddPlayer: FAILURE
+IncreaseLevel: SUCCESS
+AddGroup: SUCCESS
+RemovePlayer: SUCCESS
+IncreaseLevel: SUCCESS
+AddPlayer: FAILURE
+Highest level player is: 27
+ReplaceGroup: FAILURE
+IncreaseLevel: SUCCESS
+ReplaceGroup: FAILURE
+IncreaseLevel: SUCCESS
+Highest level player is: -1
+IncreaseLevel: SUCCESS
+RemovePlayer: INVALID_INPUT
+RemovePlayer: FAILURE
+AddPlayer: FAILURE
+IncreaseLevel: SUCCESS
+ReplaceGroup: FAILURE
+IncreaseLevel: SUCCESS
+RemovePlayer: SUCCESS
+RemovePlayer: SUCCESS
+Highest level player is: 27
+AddPlayer: FAILURE
+AddPlayer: FAILURE
+IncreaseLevel: SUCCESS
+AddGroup: SUCCESS
+IncreaseLevel: SUCCESS
+AddGroup: SUCCESS
+IncreaseLevel: SUCCESS
+AddGroup: FAILURE
+and there are no more players!
+ReplaceGroup: SUCCESS
+AddGroup: FAILURE
+AddPlayer: FAILURE
+RemovePlayer: SUCCESS
+ReplaceGroup: SUCCESS
+IncreaseLevel: SUCCESS
+RemovePlayer: SUCCESS
+ReplaceGroup: SUCCESS
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+ReplaceGroup: SUCCESS
+and there are no more players!
+AddPlayer: SUCCESS
+IncreaseLevel: SUCCESS
+AddPlayer: SUCCESS
+IncreaseLevel: SUCCESS
+Highest level player is: -1
+AddGroup: SUCCESS
+AddPlayer: FAILURE
+AddGroup: SUCCESS
+AddPlayer: FAILURE
+AddPlayer: SUCCESS
+Highest level player is: 27
+ReplaceGroup: FAILURE
+ReplaceGroup: SUCCESS
+ReplaceGroup: FAILURE
+ReplaceGroup: SUCCESS
+RemovePlayer: SUCCESS
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+ReplaceGroup: FAILURE
+AddPlayer: SUCCESS
+Highest level player is: 27
+RemovePlayer: SUCCESS
+AddPlayer: FAILURE
+AddPlayer: SUCCESS
+ReplaceGroup: FAILURE
+ReplaceGroup: FAILURE
+ReplaceGroup: FAILURE
+RemovePlayer: SUCCESS
+ReplaceGroup: SUCCESS
+Rank	||	Player
+1	||	27
+2	||	49
+3	||	30
+4	||	3
+5	||	19
+6	||	28
+7	||	4
+8	||	33
+9	||	42
+10	||	16
+11	||	9
+12	||	10
+13	||	37
+14	||	18
+15	||	5
+16	||	26
+17	||	50
+18	||	20
+19	||	29
+20	||	35
+21	||	39
+22	||	2
+23	||	11
+24	||	21
+25	||	44
+26	||	23
+27	||	12
+28	||	15
+29	||	38
+30	||	46
+and there are no more players!
+ReplaceGroup: FAILURE
+AddGroup: FAILURE
+ReplaceGroup: SUCCESS
+AddPlayer: FAILURE
+AddPlayer: SUCCESS
+AddPlayer: SUCCESS
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+AddPlayer: FAILURE
+AddPlayer: FAILURE
+Rank	||	Player
+1	||	27
+2	||	30
+3	||	49
+4	||	3
+5	||	19
+6	||	28
+7	||	4
+8	||	33
+9	||	42
+10	||	16
+11	||	9
+12	||	10
+13	||	37
+14	||	18
+15	||	5
+16	||	26
+17	||	50
+18	||	20
+19	||	6
+20	||	29
+21	||	35
+22	||	39
+23	||	2
+24	||	11
+25	||	21
+26	||	23
+27	||	44
+28	||	12
+29	||	15
+30	||	48
+31	||	38
+32	||	46
+and there are no more players!
+ReplaceGroup: FAILURE
+AddGroup: SUCCESS
+Highest level player is: -1
+Highest level player is: -1
+AddGroup: SUCCESS
+AddPlayer: FAILURE
+IncreaseLevel: SUCCESS
+RemovePlayer: SUCCESS
+AddPlayer: SUCCESS
+AddPlayer: FAILURE
+AddGroup: SUCCESS
+AddGroup: SUCCESS
+AddPlayer: SUCCESS
+ReplaceGroup: FAILURE
+AddPlayer: SUCCESS
+IncreaseLevel: SUCCESS
+AddPlayer: FAILURE
+AddPlayer: FAILURE
+AddGroup: FAILURE
+ReplaceGroup: FAILURE
+AddPlayer: FAILURE
+ReplaceGroup: FAILURE
+AddPlayer: SUCCESS
+Rank	||	Player
+1	||	27
+2	||	30
+3	||	49
+4	||	3
+5	||	19
+6	||	28
+7	||	4
+8	||	33
+9	||	42
+10	||	16
+11	||	9
+12	||	10
+13	||	23
+14	||	37
+15	||	18
+16	||	5
+17	||	26
+18	||	11
+19	||	50
+20	||	20
+21	||	34
+22	||	6
+23	||	29
+24	||	35
+25	||	39
+26	||	2
+27	||	21
+28	||	40
+29	||	44
+30	||	22
+31	||	24
+32	||	12
+33	||	15
+34	||	48
+35	||	46
+and there are no more players!
+ReplaceGroup: FAILURE
+and there are no more players!
+RemovePlayer: FAILURE
+ReplaceGroup: FAILURE
+Rank	||	Player
+1	||	27
+2	||	30
+3	||	49
+4	||	3
+5	||	19
+6	||	28
+7	||	4
+8	||	33
+9	||	42
+10	||	16
+11	||	9
+12	||	10
+13	||	23
+14	||	37
+15	||	18
+16	||	5
+17	||	26
+18	||	11
+19	||	50
+20	||	20
+21	||	34
+22	||	6
+23	||	29
+24	||	35
+25	||	39
+26	||	2
+27	||	21
+28	||	40
+29	||	44
+30	||	22
+31	||	24
+32	||	12
+33	||	15
+34	||	48
+35	||	46
+and there are no more players!
+ReplaceGroup: SUCCESS
+IncreaseLevel: SUCCESS
+AddGroup: SUCCESS
+IncreaseLevel: SUCCESS
+AddPlayer: SUCCESS
+ReplaceGroup: SUCCESS
+AddPlayer: SUCCESS
+AddGroup: FAILURE
+Highest level player is: 27
+AddPlayer: SUCCESS
+IncreaseLevel: SUCCESS
+ReplaceGroup: FAILURE
+Highest level player is: 27
+AddGroup: SUCCESS
+Rank	||	Player
+1	||	27
+2	||	30
+3	||	49
+4	||	19
+5	||	3
+6	||	26
+7	||	42
+8	||	28
+9	||	4
+10	||	33
+11	||	16
+12	||	9
+13	||	10
+14	||	23
+15	||	37
+16	||	18
+17	||	5
+18	||	11
+19	||	50
+20	||	20
+21	||	32
+22	||	34
+23	||	31
+24	||	6
+25	||	29
+26	||	35
+27	||	39
+28	||	2
+29	||	21
+30	||	40
+31	||	44
+32	||	8
+33	||	22
+34	||	24
+35	||	12
+36	||	15
+37	||	48
+38	||	46
+and there are no more players!
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+Rank	||	Player
+1	||	44
+2	||	22
+and there are no more players!
+AddPlayer: SUCCESS
+AddGroup: FAILURE
+ReplaceGroup: FAILURE
+AddPlayer: FAILURE
+AddGroup: FAILURE
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+AddPlayer: FAILURE
+AddPlayer: FAILURE
+IncreaseLevel: SUCCESS
+RemovePlayer: SUCCESS
+AddGroup: FAILURE
+ReplaceGroup: FAILURE
+AddPlayer: SUCCESS
+AddGroup: FAILURE
+IncreaseLevel: SUCCESS
+AddPlayer: SUCCESS
+Highest level player is: 35
+IncreaseLevel: SUCCESS
+AddPlayer: FAILURE
+Highest level player is: 4
+AddPlayer: FAILURE
+Highest level player is: 49
+Highest level player is: 27
+Highest level player is: -1
+ReplaceGroup: FAILURE
+IncreaseLevel: SUCCESS
+ReplaceGroup: FAILURE
+Rank	||	Player
+1	||	32
+and there are no more players!
+AddPlayer: SUCCESS
+AddPlayer: FAILURE
+Rank	||	Player
+1	||	44
+2	||	22
+3	||	41
+and there are no more players!
+AddPlayer: FAILURE
+AddGroup: SUCCESS
+IncreaseLevel: SUCCESS
+AddPlayer: FAILURE
+IncreaseLevel: SUCCESS
+Highest level player is: 8
+AddGroup: SUCCESS
+AddGroup: SUCCESS
+Highest level player is: 27
+AddPlayer: FAILURE
+AddGroup: FAILURE
+Highest level player is: 27
+AddPlayer: FAILURE
+ReplaceGroup: FAILURE
+IncreaseLevel: SUCCESS
+ReplaceGroup: FAILURE
+and there are no more players!
+AddGroup: FAILURE
+RemovePlayer: SUCCESS
+IncreaseLevel: INVALID_INPUT
+IncreaseLevel: SUCCESS
+AddPlayer: FAILURE
+Rank	||	Player
+1	||	27
+2	||	30
+3	||	49
+4	||	3
+5	||	19
+6	||	4
+7	||	37
+8	||	42
+9	||	26
+10	||	33
+11	||	28
+12	||	20
+13	||	16
+14	||	18
+15	||	9
+16	||	10
+17	||	23
+18	||	8
+19	||	31
+20	||	32
+21	||	11
+22	||	50
+23	||	35
+24	||	2
+25	||	34
+26	||	29
+27	||	39
+28	||	12
+29	||	21
+30	||	40
+31	||	44
+32	||	22
+33	||	25
+34	||	24
+35	||	17
+36	||	15
+37	||	41
+38	||	48
+39	||	1
+40	||	46
+and there are no more players!
+AddGroup: FAILURE
+AddPlayer: FAILURE
+AddGroup: FAILURE
+ReplaceGroup: INVALID_INPUT
+RemovePlayer: SUCCESS
+IncreaseLevel: SUCCESS
+AddPlayer: FAILURE
+AddPlayer: FAILURE
+RemovePlayer: FAILURE
+AddPlayer: FAILURE
+IncreaseLevel: SUCCESS
+AddGroup: INVALID_INPUT
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+AddGroup: FAILURE
+AddGroup: FAILURE
+RemovePlayer: SUCCESS
+RemovePlayer: INVALID_INPUT
+AddPlayer: FAILURE
+ReplaceGroup: SUCCESS
+ReplaceGroup: FAILURE
+ReplaceGroup: FAILURE
+ReplaceGroup: FAILURE
+IncreaseLevel: SUCCESS
+AddPlayer: FAILURE
+AddPlayer: FAILURE
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+AddPlayer: FAILURE
+AddGroup: FAILURE
+RemovePlayer: SUCCESS
+ReplaceGroup: SUCCESS
+IncreaseLevel: SUCCESS
+Highest level player is: 27
+IncreaseLevel: SUCCESS
+AddGroup: SUCCESS
+RemovePlayer: SUCCESS
+Highest level player is: 27
+IncreaseLevel: SUCCESS
+AddPlayer: FAILURE
+ReplaceGroup: SUCCESS
+AddPlayer: FAILURE
+ReplaceGroup: FAILURE
+IncreaseLevel: SUCCESS
+Highest level player is: 35
+ReplaceGroup: INVALID_INPUT
+AddPlayer: FAILURE
+Highest level player is: 23
+IncreaseLevel: SUCCESS
+AddGroup: FAILURE
+AddGroup: SUCCESS
+ReplaceGroup: SUCCESS
+Highest level player is: 27
+AddPlayer: SUCCESS
+Highest level player is: -1
+AddPlayer: SUCCESS
+AddPlayer: FAILURE
+IncreaseLevel: SUCCESS
+Rank	||	Player
+1	||	27
+2	||	30
+3	||	49
+4	||	3
+5	||	19
+6	||	23
+7	||	4
+8	||	18
+9	||	16
+10	||	37
+11	||	9
+12	||	26
+13	||	33
+14	||	20
+15	||	50
+16	||	29
+17	||	10
+18	||	8
+19	||	31
+20	||	32
+21	||	11
+22	||	35
+23	||	2
+24	||	34
+25	||	39
+26	||	6
+27	||	12
+28	||	14
+29	||	21
+30	||	40
+31	||	44
+32	||	22
+33	||	25
+34	||	24
+35	||	17
+36	||	41
+37	||	48
+38	||	1
+and there are no more players!
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+RemovePlayer: SUCCESS
+IncreaseLevel: SUCCESS
+RemovePlayer: FAILURE
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+Highest level player is: 32
+IncreaseLevel: SUCCESS
+RemovePlayer: SUCCESS
+AddPlayer: FAILURE
+AddPlayer: SUCCESS
+IncreaseLevel: SUCCESS
+RemovePlayer: SUCCESS
+Highest level player is: 27
+ReplaceGroup: FAILURE
+AddPlayer: FAILURE
+IncreaseLevel: SUCCESS
+Rank	||	Player
+1	||	49
+2	||	10
+3	||	12
+and there are no more players!
+IncreaseLevel: SUCCESS
+IncreaseLevel: INVALID_INPUT
+ReplaceGroup: FAILURE
+Highest level player is: 27
+ReplaceGroup: FAILURE
+ReplaceGroup: SUCCESS
+AddGroup: SUCCESS
+ReplaceGroup: FAILURE
+AddPlayer: FAILURE
+IncreaseLevel: SUCCESS
+and there are no more players!
+RemovePlayer: SUCCESS
+AddPlayer: FAILURE
+RemovePlayer: SUCCESS
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+RemovePlayer: SUCCESS
+ReplaceGroup: SUCCESS
+AddPlayer: FAILURE
+AddPlayer: SUCCESS
+IncreaseLevel: SUCCESS
+RemovePlayer: SUCCESS
+Highest level player is: 27
+AddPlayer: SUCCESS
+Highest level player is: 18
+AddPlayer: SUCCESS
+Highest level player is: 27
+AddGroup: SUCCESS
+and there are no more players!
+AddPlayer: FAILURE
+ReplaceGroup: FAILURE
+ReplaceGroup: SUCCESS
+ReplaceGroup: FAILURE
+RemovePlayer: SUCCESS
+ReplaceGroup: SUCCESS
+IncreaseLevel: SUCCESS
+AddGroup: SUCCESS
+AddPlayer: SUCCESS
+IncreaseLevel: SUCCESS
+ReplaceGroup: FAILURE
+AddGroup: FAILURE
+AddPlayer: SUCCESS
+AddGroup: FAILURE
+IncreaseLevel: SUCCESS
+Rank	||	Player
+1	||	27
+2	||	30
+3	||	49
+4	||	19
+5	||	23
+6	||	4
+7	||	37
+8	||	9
+9	||	26
+10	||	16
+11	||	8
+12	||	31
+13	||	33
+14	||	35
+15	||	50
+16	||	29
+17	||	41
+18	||	11
+19	||	10
+20	||	32
+21	||	12
+22	||	48
+23	||	6
+24	||	44
+25	||	2
+26	||	38
+27	||	21
+28	||	39
+29	||	17
+30	||	14
+31	||	40
+32	||	13
+33	||	22
+34	||	25
+35	||	3
+36	||	5
+and there are no more players!
+Highest level player is: 27
+AddPlayer: FAILURE
+AddGroup: SUCCESS
+RemovePlayer: SUCCESS
+and there are no more players!
+RemovePlayer: SUCCESS
+RemovePlayer: FAILURE
+Rank	||	Player
+1	||	27
+2	||	30
+3	||	49
+4	||	19
+5	||	23
+6	||	4
+7	||	37
+8	||	9
+9	||	26
+10	||	16
+11	||	8
+12	||	31
+13	||	35
+14	||	50
+15	||	29
+16	||	41
+17	||	11
+18	||	10
+19	||	32
+20	||	12
+21	||	48
+22	||	6
+23	||	44
+24	||	38
+25	||	21
+26	||	39
+27	||	17
+28	||	14
+29	||	40
+30	||	13
+31	||	22
+32	||	25
+33	||	3
+34	||	5
+and there are no more players!
+IncreaseLevel: SUCCESS
+Highest level player is: 27
+Highest level player is: 27
+RemovePlayer: FAILURE
+IncreaseLevel: SUCCESS
+AddGroup: SUCCESS
+AddGroup: SUCCESS
+IncreaseLevel: SUCCESS
+AddPlayer: SUCCESS
+Rank	||	Player
+1	||	27
+2	||	30
+3	||	49
+4	||	4
+5	||	19
+6	||	23
+7	||	37
+8	||	9
+9	||	26
+10	||	16
+11	||	8
+12	||	31
+13	||	35
+14	||	50
+15	||	29
+16	||	41
+17	||	11
+18	||	10
+19	||	32
+20	||	12
+21	||	48
+22	||	6
+23	||	44
+24	||	38
+25	||	39
+26	||	21
+27	||	17
+28	||	14
+29	||	40
+30	||	13
+31	||	22
+32	||	25
+33	||	3
+34	||	5
+35	||	42
+and there are no more players!
+RemovePlayer: SUCCESS
+IncreaseLevel: SUCCESS
+ReplaceGroup: SUCCESS
+RemovePlayer: FAILURE
+AddPlayer: FAILURE
+Rank	||	Player
+1	||	27
+2	||	30
+3	||	49
+4	||	4
+5	||	19
+6	||	23
+7	||	37
+8	||	31
+9	||	9
+10	||	26
+11	||	16
+12	||	35
+13	||	50
+14	||	29
+15	||	41
+16	||	11
+17	||	10
+18	||	32
+19	||	12
+20	||	48
+21	||	6
+22	||	44
+23	||	38
+24	||	39
+25	||	21
+26	||	17
+27	||	14
+28	||	40
+29	||	13
+30	||	22
+31	||	25
+32	||	3
+33	||	5
+34	||	42
+and there are no more players!
+RemovePlayer: SUCCESS
+IncreaseLevel: SUCCESS
+IncreaseLevel: INVALID_INPUT
+IncreaseLevel: SUCCESS
+ReplaceGroup: SUCCESS
+ReplaceGroup: FAILURE
+AddPlayer: INVALID_INPUT
+AddPlayer: SUCCESS
+AddGroup: SUCCESS
+IncreaseLevel: SUCCESS
+AddGroup: SUCCESS
+ReplaceGroup: FAILURE
+IncreaseLevel: SUCCESS
+IncreaseLevel: SUCCESS
+Quit done.
